@@ -19,20 +19,19 @@
             <div class="col-lg-7 d-none d-lg-block">
                 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
-                      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                      <li data-target="#ft-1" data-slide-to="0" class="active"></li>
+                      <li data-target="#ft-2" data-slide-to="1"></li>
                     </ol>
                     <div class="carousel-inner">
                       <div class="carousel-item img-1 min-vh-100 active">
-                        <!--<img src="img-1.jpg" class="d-block w-100" alt="...">-->
                         <div class="carousel-caption d-none d-md-block">
-                          <h5 class="font-weight-bold">YouFlix</h5>
-                          <a class="text-muted text-decoration-none">Videojuegos</a>
+                          <h4 class="font-weight-bold">YouFlix</h4>
+                          <a class="text-muted text-decoration-none">Videos</a>
                         </div>
                       </div>
                       <div class="carousel-item img-2 min-vh-100">
                         <div class="carousel-caption d-none d-md-block">
-                          <h5 class="font-weight-bold">YouFlix</h5>
+                          <h4 class="font-weight-bold">YouFlix</h4>
                           <a class="text-muted text-decoration-none">Umboxings</a>
                         </div>
                       </div>
@@ -60,7 +59,7 @@
                     </div>
                     <div class="mb-4">
                       <label for="exampleInputPassword1" class="form-label font-weight-bold">Contraseña</label>
-                      <input type="password" class="form-control bg-dark-x border-0 mb-2" placeholder="Ingresa tu contraseña" id="exampleInputPassword1">
+                      <input type="password" class="form-control bg-dark-x border-0 mb-2" placeholder="********" id="exampleInputPassword1">
                       <a href="" id="emailHelp" class="form-text text-muted text-decoration-none">¿Has olvidado tu contraseña?</a>
                     </div>
                     <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
@@ -68,11 +67,13 @@
 
                 <p class="font-weight-bold text-center text-muted">O Inicia Sesión Con</p>
                 <div class="d-flex justify-content-around">
+                    <a href='{%%}'>
                     <button id="btn" type="button" class="btn btn-outline-light flex-grow-1 mr-2"><i class="fab fa-google lead mr-2"></i> Google</button>
+                    </a>
                 </div>
                 </div>
                 <div class="text-center px-lg-5 pt-lg-3 pb-lg-4 p-4 mt-auto w-100">
-                    <p class="d-inline-block mb-0">¿Todavia no tienes una cuenta?</p> <a href="" class="text-light font-weight-bold text-decoration-none">Creemos Una</a>
+                    <p class="d-inline-block mb-0">¿Todavia no tienes una cuenta?</p> <a href='{% url "sign_up" %}' class="text-light font-weight-bold text-decoration-none">Creemos Una</a>
                 </div>
             </div>
         </div>
