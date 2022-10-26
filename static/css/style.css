@@ -1,5 +1,5 @@
 :root {
-  --dark: #370451 ;
+  --dark: #261a3b;
   --dark-x: #d9d4ea ;
   --light: #e1dcf1 ;
 }
@@ -35,13 +35,13 @@ body {
 }
 
 .img-1 {
-  background-image: url("img-1.jpg");
+  background-image: url("../img/img-1.jpg");
   background-size: cover;
   background-position: center;
 }
 
 .img-2 {
-  background-image: url("img-2.jpg");
+  background-image: url("../img/img-2.jpg");
   background-size: cover;
   background-position: center;
 }
