@@ -1,7 +1,7 @@
 :root {
-  --dark: #261a3b;
-  --dark-x: #d9d4ea ;
-  --light: #e1dcf1 ;
+  --dark: #17141a;
+  --dark-x: #888888;
+  --light: #ffffff;
 }
 
 body {
@@ -35,13 +35,13 @@ body {
 }
 
 .img-1 {
-  background-image: url("../img/img-1.jpg");
+  background-image: url("../img/palomitas.gif");
   background-size: cover;
   background-position: center;
 }
 
 .img-2 {
-  background-image: url("../img/img-2.jpg");
+  background-image: url("../img/gif.gif");
   background-size: cover;
   background-position: center;
 }
