@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'app_1',
+    'crispy_forms',
     'allauth',#GOOGLE
     'allauth.account',
     'allauth.socialaccount',
@@ -139,6 +140,7 @@ SITE_ID=2
 LOGIN_REDIRECT_URL = '/'
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 
 AUTHENTICATION_BACKENDS = [
