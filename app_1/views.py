@@ -1,12 +1,11 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 
-
 PUBLIC_DOMAIN_NAME = '127.0.0.1:8000'
+
 # Create your views here.
 def login(request):
     if "POST" == request.method:
