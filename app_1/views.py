@@ -3,6 +3,8 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
+#importar modelo video
+from app_1.models import Video
 
 PUBLIC_DOMAIN_NAME = '127.0.0.1:8000'
 
@@ -22,4 +24,13 @@ def sign_up(request):
 
 @login_required
 def base_main(request):
-    return render(request, "app_1/base.html")
+    #para importar todos los objetos videos
+    video=Video.objects.all()
+    #decir al render que devuelva plantilla renderizada
+    return render(request, "app_1/base.html",{"videos":video})
+    #return render(request, "app_1/base.html")
+
+#MIRAR
+def padre(request):
+   
+   return render(request,'app_1/padre.html')
