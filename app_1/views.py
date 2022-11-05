@@ -34,3 +34,16 @@ def base_main(request):
 def padre(request):
    
    return render(request,'app_1/padre.html')
+
+def padre2(request):
+   
+   return render(request,'app_1/padre2.html')
+     
+
+def profile(request):
+   
+    return render(request,'app_1/profile.html')
+
+
+def player(request):
+    return render(request,'app_1/player.html')
