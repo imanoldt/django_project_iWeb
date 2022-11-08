@@ -47,4 +47,6 @@ def profile(request):
 
 
 def player(request):
+
+    
     return render(request,'app_1/player.html')
