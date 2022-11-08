@@ -41,8 +41,9 @@ def padre2(request):
      
 
 def profile(request):
-   
-    return render(request,'app_1/profile.html')
+    video=Video.objects.all()
+    #decir al render que devuelva plantilla renderizada
+    return render(request,'app_1/profile.html',{"videos":video})
 
 
 def player(request):
