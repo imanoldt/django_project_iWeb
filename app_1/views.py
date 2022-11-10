@@ -27,17 +27,18 @@ def base_main(request):
     #para importar todos los objetos videos
     video=Video.objects.all()
     #decir al render que devuelva plantilla renderizada
-    return render(request, "app_1/base.html",{"videos":video})
+    return render(request, "app_1/videos.html",{"videos":video})
     #return render(request, "app_1/base.html")
 
-#MIRAR
-def padre(request):
-   
-   return render(request,'app_1/padre.html')
 
-def padre2(request):
+#MIRAR
+def base(request):
    
-   return render(request,'app_1/padre2.html')
+   return render(request,'app_1/base.html')
+
+def base2(request):
+   
+   return render(request,'app_1/base2.html')
      
 
 def profile(request):
@@ -46,7 +47,7 @@ def profile(request):
     return render(request,'app_1/profile.html',{"videos":video})
 
 
-def player(request):
-
+def player(request,path):
+    print(path)
     
     return render(request,'app_1/player.html')

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{%extends 'app_1/padre2.html' %}
+{%extends 'app_1/base2.html' %}
 <!--COGER NOMBRE USUARIO DE INICIO DE SESION-->
 {% load account %}
 {% user_display user %}
@@ -51,7 +51,7 @@
                      <!--<p>{{user}}</p>--> 
                       <p>{% user_display user %}</p>
                       
-                     <video width="100%" height="281" controls>
+                     <video width="80%" height="281" controls>
                             <source src="{{video.path}}" type="video/mp4">
                           </video>
                         

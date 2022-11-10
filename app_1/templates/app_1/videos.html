@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{%extends 'app_1/base.html' %}
+
+{% load account %}
+{% user_display user %}
+
+
+{%block title%}
+ <p>Titulo añadido</p>
+{%endblock%} 
+
+
+{% block contentVideo %}
+  <div class="row mt-5" >
+    <h3 class="dysplay-6 text-danger">YOUFLIX</h3>
+
+    {%for video in videos%}
+        <div class="col-sm 12 col-md-4 col-md-4 col-md-4 py-2">
+          <div class="card shadow" >
+              <a href="{% url 'player' 'path'  %}">
+                <div class="card-body">
+                    <h6>{{video.title}}</h6>
+                    <p>{{video.description}}</p>
+                    <p>{{video.path}}</p>
+                    <p>{{video.datetime}}</p>
+                    <p>{{user}}</p>
+                    <p>{% user_display user %}</p>
+                  
+                    <video width="320" height="240" controls>
+                      <source src="{{video.path}}" type="video/mp4">
+                    </video>
+                </div>
+              </a>
+          </div>
+        </div>
+    {%endfor%}
+  </div>
+
+{% endblock %}
+
+{% block contentNav %}
+
+{% endblock %}
