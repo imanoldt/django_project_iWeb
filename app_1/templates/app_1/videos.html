@@ -1,43 +1,36 @@
 <!DOCTYPE html>
-{%extends 'app_1/base.html' %}
+{%extends 'app_1/base.html' %} {% load account %} {% user_display user %}
 
-{% load account %}
-{% user_display user %}
-
+<!-- {% block estio %}<link rel="stylesheet" href="../../static/css/video.css"> {% endblock %} -->
 
 {%block title%}
- <p>Titulo añadido</p>
-{%endblock%} 
-
-
-{% block contentVideo %}
-  <div class="row mt-5" >
-    <h3 class="dysplay-6 text-danger">YOUFLIX</h3>
-
-    {%for video in videos%}
-        <div class="col-sm 12 col-md-4 col-md-4 col-md-4 py-2">
-          <div class="card shadow" >
-              <a href='/player/{{video.title}}'>
-                <div class="card-body">
-                    <h6>{{video.title}}</h6>
-                    <p>{{video.description}}</p>
-                    <p>{{video.path}}</p>
-                    <p>{{video.datetime}}</p>
-                    <p>{{user}}</p>
-                    <p>{% user_display user %}</p>
-                  
-                    <video width="320" height="240" controls>
-                      <source src="{{video.path}}" type="video/mp4">
-                    </video>
-                </div>
-              </a>
+<p>Titulo añadido</p>
+{%endblock%} {% block contentVideo %}
+<div class="row mt-5">
+  <h3 class="dysplay-6 text-danger">YOUFLIX</h3>
+  {%for video in videos%}
+  <div class="col-sm 12 col-md-4 col-md-4 col-md-4 py-2">
+    <div class="card shadow">
+      <a href="/player/{{video.title}}">
+        <div class="card-body">
+          <video
+            loop
+            class="card-img-top hover-to-play"
+            width="320"
+            height="240"
+          >
+            <source src="{{video.path}}" type="video/mp4" />
+          </video>
+          <div class="card-body text-left">
+            <h5 class="card-title text-left">{{video.title}}</h5>
+            <p class="card-text text-left">{{video.description}}</p>
+            <p class="blockquote-footer text-left">{{video.datetime}}</p>
           </div>
         </div>
-    {%endfor%}
+      </a>
+    </div>
   </div>
 
-{% endblock %}
-
-{% block contentNav %}
-
-{% endblock %}
+  {%endfor%}
+</div>
+{% endblock %} {% block contentNav %} {% endblock %}
