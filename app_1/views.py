@@ -47,7 +47,10 @@ def profile(request):
     return render(request,'app_1/profile.html',{"videos":video})
 
 
-def player(request,path):
-    print(path)
+def player(request,titulo):
     
-    return render(request,'app_1/player.html')
+    video = Video.objects.get(title = titulo)
+    context = {
+        'video' : video, 
+    }
+    return render(request,'app_1/player.html', context)

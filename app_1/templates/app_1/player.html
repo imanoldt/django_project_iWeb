@@ -49,18 +49,15 @@
         <div class="row g-5">
           <div class="col-md-7 col-lg-8">
             <video class="embed-responsive embed-responsive-16by9" controls>
-              <source src="" {{video.src}} type="video/mp4" />
+              <source src="{{ video.path }}" type="video/mp4" />
             </video>
             <span
               class="tit-video badge bg-danger rounded-pill w-100 text-start"
-              >TITULO DEL VIDEO</span
+              > {{ video.title }}</span
             >
             <div class="cont-descrip">
               <p class="descrip">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea,
-                est? Error, enim. Esse, provident vitae aliquam, illum
-                distinctio est quis quidem minus quisquam ullam quos, nisi neque
-                necessitatibus voluptas dolorem.
+                {{ video.description }}
               </p>
             </div>
           </div>
