@@ -48,9 +48,8 @@
                       <h2 class="boxHeadline">{{video.title}}</h2>
                       <h3 class="boxHeadlineSub">{{video.description}}</h3>
                       <p>{{video.datetime}}</p>
-                     <!--<p>{{user}}</p>--> 
+
                       <p>{% user_display user %}</p>
-                      
                      <video width="80%" height="281" controls>
                             <source src="{{video.path}}" type="video/mp4">
                           </video>

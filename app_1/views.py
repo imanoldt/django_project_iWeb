@@ -46,6 +46,8 @@ def profile(request):
     #decir al render que devuelva plantilla renderizada
     return render(request,'app_1/profile.html',{"videos":video})
 
+def upload(request):
+    return render(request,'app_1/upload.html')
 
 def player(request,titulo):
     

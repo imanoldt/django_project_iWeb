@@ -9,6 +9,7 @@ urlpatterns = [
     path('base2/profile/', views.profile, name='profile'),
     path('player/<slug:titulo>', views.player, name='player'),
     path('player/', views.player, name='player'),
+    path('upload/', views.upload, name='upload'),
     #path('base/', views.base, name='base'),
     #path('base2/', views.base2, name='base2'),
 ]

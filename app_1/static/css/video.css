@@ -1,13 +1,16 @@
+html{
+    margin-bottom: 10%;
+}
 .a card-title{
     text-decoration: none;
-    
+
 }
 .a card-text{
     text-decoration: none;
-
 }
-
 .card-body{
-    background-color: aquamarine;
-    color: burlywood;
+    background-color: #303030;
+    color: white;
+    text-decoration: none;
+    
 }
