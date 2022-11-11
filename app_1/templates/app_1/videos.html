@@ -9,34 +9,38 @@
 <p>Titulo añadido</p>
 {%endblock%} 
 {% block contentVideo %}
-<div class="row mt-5">
-  <h1 class="dysplay-6 text-danger">YOUFLIX</h1>
+<h1 class="dysplay-6 " id="title">YOUFLIX</h1>
+<div class="scroll-bg" >
+  <div class="scroll-div" >
+    <div class="scroll-object" >
+      <div class="dashboard-content text-center px-3 pt-4" >
+        <div class="row mt-5">
+          {%for video in videos%}
+          <div class="col-sm 12 col-md-4 col-md-4 col-md-4 py-2">
+            <a href="/player/{{video.title}}">
+            <div class="card">
+              
+              <video 
+              loop
+              class="card-img-top"
+              width="320"
+              height="240">
+                <source src="{{video.path}}" type="video/mp4" />
+              </video>
+              <div class="card-body">
+                <h5 class="card-title">{{video.title}}</h5>
+                <p class="card-text">{{video.description}}</p>
+                <p class="card-text"><small class="text-muted">{{video.datetime}}</small></p>
+              </div>
+            </a>
 
+            </div>
+          </div>
 
-  
-  {%for video in videos%}
-  <div class="col-sm 12 col-md-4 col-md-4 col-md-4 py-2">
-    <a href="/player/{{video.title}}">
-    <div class="card">
-      
-      <video
-      loop
-      class="card-img-top"
-      width="320"
-      height="240"
-    >
-      <source src="{{video.path}}" type="video/mp4" />
-    </video>
-      <div class="card-body">
-        <h5 class="card-title">{{video.title}}</h5>
-        <p class="card-text">{{video.description}}</p>
-        <p class="card-text"><small class="text-muted">{{video.datetime}}</small></p>
+          {%endfor%}
+        </div>
       </div>
-    </a>
-
     </div>
   </div>
-
-  {%endfor%}
 </div>
 {% endblock %} {% block contentNav %} {% endblock %}
