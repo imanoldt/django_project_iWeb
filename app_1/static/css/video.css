@@ -3,21 +3,19 @@ html{
    
 }
 .body{
-    background-color: #585858;
+    background-color: #1B1C1E;
 }
-.a card-title{
-    text-decoration: none;
 
-}
-.a card-text{
-    text-decoration: none;
-}.card-img-top{
-    background-color:#2e2e2d;;
+.card-img-top{
+    object-fit: cover;
+    
 }
 .card{
     position:relative;
+    border-radius: 100px;
    
 }
+
 .card::after{
     position:absolute;
     top: 0px;
@@ -25,38 +23,50 @@ html{
     content: ' ';
     width:100%;
     height: 100%;
-    background-image: linear-gradient(to right, #000000, #dd1818);
+    background-image: linear-gradient(to right, #252525, #fb4848);
     filter: blur(7px);
     z-index: -1;
 }
 .card-body{
-    background-image: linear-gradient(to right, #000000, #434343);
+    /* background-image: linear-gradient(to right, #000000, #434343); */
+    background-color: #252525;
     color: white;
     text-decoration: none;
+    text-transform: none;
+    text-decoration-line: none;
     
 }
 .card-title{
    
-    color: #f4eded;
+    color: #ffffff;
     text-decoration: none;
+    text-align: center;
+
 }
 .card-text{
-    color: #f5efef;
+    color: #f2f2f2;
     text-decoration: none;
+    text-align: justify;
 }
 #title{
-    text-align: center;
+    text-align: left;
     color: #dd1818;
+    font-size: 5.5em;
+    margin-left: 20px;
 }
 /*DIV DE SCROLL*/
 .scroll-bg{
    /* border-radius: 50px;*/
-   
+   overflow-x:hidden;
+   overflow-y:hidden;
+   overflow: hidden;
     margin:2%;
 }
 .scroll-div{
     width: 97%;
-    height: 500px;
+    height: 1000px;
+    scroll-behavior: smooth;
     overflow-y:scroll;
+
   
 }
