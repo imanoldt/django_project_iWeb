@@ -6,9 +6,12 @@
 
 
 
-{% block estilo %}<link rel="stylesheet" href="../../static/css/styleProfile.css"> {% endblock %}
+{% block estilo %}
+  <link rel="stylesheet" href="../../static/css/styleProfile.css"> 
+  <link rel="stylesheet" href="../../static/css/styleProfile2.css">
+{% endblock %}
 {%block title%}
- <p>Titulo añadido</p>
+ <p>YouFlix</p>
 {%endblock%} 
 
 {% block contentVideo %}
@@ -19,7 +22,7 @@
           <div class="col-12 col-sm-8 col-lg-6">
             <!-- Section Heading-->
             <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-              <h3 class="dysplay-6 text-danger">YOUFLIX</h3>
+              <h3 class="dysplay-6 text-danger" id="title">YOUFLIX</h3>
               <div class="line"></div>
             </div>
           </div>
@@ -41,26 +44,34 @@
             </div>
           </div>
           <div class="col-12 col-xs-9 col-sm-9 col-lg-9">
-            <div class="row mt-4" >
-              {%for video in videos%}
-                  <div class="col-xs-12 col-sm-6">
-                    <div class="box rte">
-                      <h2 class="boxHeadline">{{video.title}}</h2>
-                      <h3 class="boxHeadlineSub">{{video.description}}</h3>
-                      <p>{{video.datetime}}</p>
+            <div class="scroll-bg" >
+              <div class="scroll-div" >
+                <div class="scroll-object" >
+                  <div class="row mt-4" >
+                    {%for video in videos%}
+                        <div class="col-xs-12 col-sm-6">
+                          <div class="box-rte">
+                            <h2 class="boxHeadline">{{video.title}}</h2>
+                            <h3 class="boxHeadlineSub">{{video.description}}</h3>
+                            <p>{{video.datetime}}</p>
+                            <p>{% user_display user %}</p>
+                            <video controls class="box-img-top" width="80%" height="281">
+                              <source src="{{video.path}}" type="video/mp4">
+                            </video>
+                            
+                              
+                          </div>
+                        </div>
 
-                      <p>{% user_display user %}</p>
-                     <video width="80%" height="281" controls>
-                            <source src="{{video.path}}" type="video/mp4">
-                          </video>
-                        
-                    </div>
+                    {%endfor%}
                   </div>
-
-           {%endfor%}
+                </div>
+              </div>
             </div>
-            
           </div>
+
+
+
         </div>
        
 <!--</div>-->

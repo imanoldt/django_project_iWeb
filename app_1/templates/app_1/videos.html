@@ -6,7 +6,7 @@
 {% block estilo %}<link rel="stylesheet" href="../../static/css/video.css"> {% endblock %}
 
 {%block title%}
-<p>Titulo añadido</p>
+<p>YouFlix</p>
 {%endblock%} 
 {% block contentVideo %}
 <h1 class="dysplay-6 " id="title">YOUFLIX</h1>
@@ -19,11 +19,7 @@
           <div class="col-sm 12 col-md-4 col-md-4 col-md-4 py-2">
             <a href="/player/{{video.title}}">
             <div class="card">
-              <video 
-              loop
-              class="card-img-top"
-              width="320"
-              height="240">
+              <video loop class="card-img-top" width="320" height="240">
                 <source src="{{video.path}}" type="video/mp4" />
               </video>
               <div class="card-body">
