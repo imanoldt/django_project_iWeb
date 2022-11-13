@@ -1,18 +1,19 @@
 # YouFlix &copy; 
 
+
 **YouFLix** nacio como un proyecto de la asignatura Ingenieria Web. Pretende ser una plataforma donde cualquier usuario pueda subir videos y al mismo tiempo reproducirlos como si de YouTube se tratase. Asi mismo, cada usuario puede filtrar y categorizar los video de manera sencilla. Tambien, si un video te ha gustado, puedes dejar un me gusta o incluso un comentario para apoyar al creador.
 
-##DownLoad	:fa-cloud-download:
+## DownLoad	:fa-cloud-download:
 Hay **dos** maneras sencillas de poder lanzar esta pagina:
 
-####1. Clonacion del repositorio de GitHub		:fa-github-alt: 
+#### 1. Clonacion del repositorio de GitHub		:fa-github-alt: 
 `$ git clone https://github.com/imanoldt/django_project_iWeb.git`
 
 Una vez clonado, se nos creara una carpeta llamada `django_project_iWeb`
-####2. Descargar .ZIP		:fa-download:
+#### 2. Descargar .ZIP		:fa-download:
 Para descargar el ZIP es tan sencillo como acceder al [**Repositorio**](https://github.com/imanoldt/django_project_iWeb.git "Repositorio") y descargar como .**zip**
 
-##Installation/Run	:fa-file-code-o:	:fa-html5:
+## Installation/Run	:fa-file-code-o:	:fa-html5:
 
 Abrir una terminal en la ruta donde se ha descargado el proyecto y lanzar el siguiente comando: 
 
@@ -25,7 +26,7 @@ Si desea ver las librerias instaladas ejecute `$ pip freeze` o abra el archivo `
 > NOTA: Para usuarios Mac OS puede que de algun tipo de fallo por incompatibilidad con algunas librerias. Ponerse en contacto con el desarrollador.
 
 
-##Views	:fa-terminal:
+## Views	:fa-terminal:
 
 | VIEW  |  PATH |
 | ------------ | ------------ |
@@ -37,7 +38,7 @@ Si desea ver las librerias instaladas ejecute `$ pip freeze` o abra el archivo `
 |  Player|  /player/ `<slug:titulo_video> ` |
 
 
-##Models :fa-space-shuttle:
+## Models :fa-space-shuttle:
 
 ```python
 class Video(models.Model): #MODIFICADO
@@ -67,8 +68,9 @@ class Comment(models.Model):#MODIFICADO
 
 ```
 
-##API	:fa-toggle-on: :fa-jsfiddle:
+## API	:fa-toggle-on: :fa-jsfiddle:
 En esta Web hemos implementado la** API de Google** que te permite iniciar sesion con tu cuenta de **Google** en dos simples click's. La API gestiona tu informacion, protegue toda tu privacidad permite el encriptado de lado a lado gracias a su interfaz.
+
 
 
 
