@@ -2,21 +2,33 @@ html{
     margin-bottom: 10%;
    
 }
+
 .body{
     background-color: #1B1C1E;
 }
-
+/*
 .card-img-top{
     object-fit: cover;
     
 }
-.card{
+*/
+.cubo-img-top {
+    object-fit:cover ;
+    width: 100%;
+  
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+   
+}
+.cubo{
     position:relative;
     border-radius: 100px;
+    
+
    
 }
 
-.card::after{
+.cubo::after{
     position:absolute;
     top: 0px;
     left: 0px;
@@ -27,26 +39,31 @@ html{
     filter: blur(7px);
     z-index: -1;
 }
-.card-body{
+.cubo-body{
     /* background-image: linear-gradient(to right, #000000, #434343); */
     background-color: #252525;
     color: white;
     text-decoration: none;
     text-transform: none;
     text-decoration-line: none;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     
 }
-.card-title{
+.cubo-title{
    
     color: #ffffff;
     text-decoration: none;
     text-align: center;
 
 }
-.card-text{
+.cubo-text{
     color: #f2f2f2;
     text-decoration: none;
     text-align: justify;
+    border-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 #title{
     text-align: left;
@@ -54,6 +71,7 @@ html{
     font-size: 5.5em;
     margin-left: 20px;
 }
+
 /*DIV DE SCROLL*/
 .scroll-bg{
    /* border-radius: 50px;*/
