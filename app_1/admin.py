@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import User, Video, Channel, Comment
+from .models import Video, Channel, Comment
 
 
 #MODIFICADO 
@@ -10,11 +10,6 @@ Administracion del panel admin
 Cambios en el listado de Videos
  """
 
-@admin.register(User)
-class UserAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'contrasenya')
-    ordering = ('id', 'name')
-    search_fields = ('id', 'name')
 
 @admin.register(Video)
 class UserAdmin(admin.ModelAdmin):
