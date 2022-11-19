@@ -20,6 +20,9 @@ body {
   background-color: var(--dark-x);
 }
 
+#foto_left{
+  z-index: -1;
+}
 .btn {
   min-height: 3.125rem;
   font-weight: 600;
