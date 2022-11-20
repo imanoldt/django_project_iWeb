@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 
-{%extends 'app_1/base.html' %} {% load account %} {% user_display user %}
+{% extends 'app_1/base.html' %} {% load account %} {% user_display user %}
 {% load static %}
 
 {% block estilo %}<link rel="stylesheet" href="../../static/css/video.css"> {% endblock %}
 
-{%block title%}
+{% block title %}
 YouFlix
-{%endblock%} 
+{% endblock %} 
 {% block contentVideo %}
 <h1 class="dysplay-6 " id="title">YOUFLIX</h1>
 <div class="scroll-bg" >
@@ -15,22 +15,25 @@ YouFlix
     <div class="scroll-object" >
       <div class="dashboard-content text-center px-3 pt-4" >
         <div class="row mt-5">
-          {%for video in videos%}
+          {% if object_list %} {% comment %} COMPROBACION DE SI NOS DEVUELVE UNA LISTA {% endcomment %}
+          {% for video in object_list %}  {% comment %} RECORREMOS {% endcomment %}
           <div class="col-sm 12 col-md-4 col-md-4 col-md-4 py-2">
-            <a href="/player/{{video.title}}">
-            <div class="cubo ">
-              <video loop class="cubo-img-top " width="320" height="240">
+            <a href="/player/{{video.title}}" class="text-decoration-none">
+            <div class="cubo">
+{% comment %}               <video loop class="cubo-img-top " width="320" height="240">
                 <source src="{{video.path}}" type="video/mp4" />
-              </video>
-              <div class="cubo-body">
-                <h5 class="cubo-title">{{video.title}}</h5>
-                <p class="cubo-text">{{video.description}}</p>
-                <p class="cubo-text"><small class="text-muted">{{video.datetime}}</small></p>
+              </video> {% endcomment %}
+              <img src="{{video.thumnail}}" class="rounded cubo-img-top" alt="{{video.title}}">
+              <div class="cubo-body p-3">
+                <h5 class="cubo-title p-3 text-left">{{video.title}}</h5>
+                <p class="cubo-text p-3 text-justify">{{video.description}}</p>
+                <p class="cubo-text p-3"><small class="text-muted">{{video.datetime}}</small></p>
               </div>
             </a>
             </div>
           </div>
-          {%endfor%}
+          {% endfor %}
+          {% endif %} 
         </div>
       </div>
     </div>

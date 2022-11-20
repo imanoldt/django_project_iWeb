@@ -48,22 +48,23 @@
               <div class="scroll-div" >
                 <div class="scroll-object" >
                   <div class="row mt-4" >
-                    {%for video in videos%}
-                        <div class="col-xs-12 col-sm-6">
-                          <div class="box-rte">
-                            <h2 class="boxHeadline">{{video.title}}</h2>
-                            <h3 class="boxHeadlineSub">{{video.description}}</h3>
-                            <p>{{video.datetime}}</p>
-                            <p>{% user_display user %}</p>
-                            <video controls class="box-img-top" width="80%" height="281">
-                              <source src="{{video.path}}" type="video/mp4">
-                            </video>
-                            
-                              
+                    {% if object_list %} {% comment %} COMPROBACION DE SI NOS DEVUELVE UNA LISTA {% endcomment %}
+                    {% for video in object_list %}  {% comment %} RECORREMOS {% endcomment %}
+                        <div class="col-xs-2">
+                          <div class="col-sm 12 col-md-4 col-md-4 col-md-4 py-2">
+                            <a href="/player/{{video.title}}" class="text-decoration-none">
+                              <div class="cubo">
+                                <img src="{{video.thumnail}}" class="rounded cubo-img-top" alt="{{video.title}}">
+                                <div class="cubo-body p-3">
+                                  <h5 class="cubo-title p-3 text-left">{{video.title}}</h5>
+                                  <p class="cubo-text p-3 text-justify">{{video.description}}</p>
+                                  <p class="cubo-text p-3"><small class="text-muted">{{video.datetime}}</small></p>
+                                </div>
+                              </a>
                           </div>
                         </div>
-
-                    {%endfor%}
+                        {% endfor %}
+                        {% endif %} 
                   </div>
                 </div>
               </div>

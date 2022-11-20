@@ -35,7 +35,7 @@ class Video(models.Model):  # MODIFICADO
     cathegory = models.CharField(
         max_length=300, null=True, choices=VIDEO_CATHEGORY, default='')
     channel = models.ForeignKey(Channel, on_delete=models.CASCADE,
-                                blank=False, null=True, default='', related_name='videos')
+                                blank=True, null=True, default='', related_name='videos')
 
     def __str__(self):  # DEVUELVE STRING DE LO QUE QUEREMOS VISUALIZAR / TOSTRING() _ JAVA
         return self.title
