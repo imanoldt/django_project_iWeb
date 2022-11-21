@@ -4,6 +4,8 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 from django.views.generic import ListView
+from django.views.generic import DetailView
+
 #importar modelo video
 from app_1.models import Video
 
@@ -32,6 +34,8 @@ def base_main(request):
     #return render(request, "app_1/base.html") """
 
 
+
+
 class VideoListView (ListView):
     model = Video
     template_name= 'app_1/videos.html'
@@ -47,13 +51,24 @@ class ProfileListView (ListView):
 
 
 #MIRAR
-def base(request):
+""" def base(request):
    
-   return render(request,'app_1/base.html')
-
-def base2(request):
+   return render(request,'app_1/base.html') 
+   
+   def base2(request):
    
    return render(request,'app_1/base2.html')
+   
+   
+   """
+
+class base (DetailView):
+    template_name= 'app_1/base.html'
+
+class base (DetailView):
+    template_name= 'app_1/base2.html'
+
+
      
 
 

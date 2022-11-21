@@ -1,5 +1,11 @@
-window.addEventListener("load", () => {
-    const preload = document.querySelector(".preload");
-    preload.classList.add("preload-finish");
-  });
-  
+$.getScript("ajax/test.js", function () {
+  alert("Load was performed.");
+});
+
+$(document).ready(function () {
+  setTimeout(function () {
+    $("body").removeClass("cut");
+    $("#pulsar").addClass("hide");
+    $("#preloader").addClass("moveUp");
+  }, 1000);
+});

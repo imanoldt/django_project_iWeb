@@ -14,7 +14,6 @@
     border-radius: 4%;
 }
 
-
 .box::after{
     position:absolute;
     top: 0px;
@@ -28,22 +27,18 @@
 }
 .box-rte{
     border-radius: 4%;
-    /* background-image: linear-gradient(to right, #000000, #434343); */
     background-color: #252525;
     color: white;
     text-decoration: none;
     text-transform: none;
     text-decoration-line: none;
     margin: 2%;
-    
 }
 .boxHeadline{
-   
     color: #fa6e6e;
     text-decoration: none;
     text-align: center;
   
-
 }
 .boxHeadlineSub{
     color: #f2f2f2;
@@ -73,12 +68,4 @@
      height: 1000px;
      scroll-behavior: smooth;
      overflow-y:scroll;
- 
-   
  }
-
-
-
-
-
- 

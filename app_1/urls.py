@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import include, path
 from . import views
 from app_1.views import VideoListView, ProfileListView
 
@@ -13,6 +13,7 @@ urlpatterns = [
     path('player/<slug:titulo>', views.player, name='player'),
     path('player/', views.player, name='player'),
     path('upload/', views.upload, name='upload'),
+    path('__debug__/', include('debug_toolbar.urls')),
     #path('base/', views.base, name='base'),
     #path('base2/', views.base2, name='base2'),
 ]
