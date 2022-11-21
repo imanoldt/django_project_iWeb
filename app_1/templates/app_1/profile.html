@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 {%extends 'app_1/base2.html' %}
+
 <!--COGER NOMBRE USUARIO DE INICIO DE SESION-->
 {% load account %}
 {% user_display user %}
 
 
-
+{% load static%}
 {% block estilo %}
-  <link rel="stylesheet" href="../../static/css/styleProfile.css"> 
+<link rel="stylesheet" href="../../static/css/video.css">
   <link rel="stylesheet" href="../../static/css/styleProfile2.css">
+  <link rel="stylesheet" href="../../static/css/styleProfile.css">
 {% endblock %}
+
 {%block title%}
  <p>YouFlix</p>
 {%endblock%} 
@@ -30,49 +33,44 @@
         <div class="row">
           <!-- Single Advisor-->
           <div class="col-12 col-xs-3 col-sm-3 col-lg-3">
-            <div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-              <!-- Team Thumb-->
-              <div class="advisor_thumb"><img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
-                <!-- Social Info-->
-                <div class="social-info">
-                  <a href="#"></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div>
-              </div>
-              <!-- Team Details-->
-              <div class="single_advisor_details_info">
-                <h4>{% user_display user %}</h4>
-              </div>
-            </div>
+
+            
+            <figure class="snip1336">
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87" />
+              <figcaption>
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample4.jpg" alt="profile-sample4" class="profile" />
+                <h2>Hans Down<span>Engineer</span></h2>
+                <p>efwrferferferferferferferferfer</p>
+              </figcaption>
+            </figure>
+
           </div>
           <div class="col-12 col-xs-9 col-sm-9 col-lg-9">
             <div class="scroll-bg" >
               <div class="scroll-div" >
                 <div class="scroll-object" >
-                  <div class="row mt-4" >
+                  <div class="row mt-5">
                     {% if object_list %} {% comment %} COMPROBACION DE SI NOS DEVUELVE UNA LISTA {% endcomment %}
                     {% for video in object_list %}  {% comment %} RECORREMOS {% endcomment %}
-                        <div class="col-xs-2">
-                          <div class="col-sm 12 col-md-4 col-md-4 col-md-4 py-2">
-                            <a href="/player/{{video.title}}" class="text-decoration-none">
-                              <div class="cubo">
-                                <img src="{{video.thumnail}}" class="rounded cubo-img-top" alt="{{video.title}}">
-                                <div class="cubo-body p-3">
-                                  <h5 class="cubo-title p-3 text-left">{{video.title}}</h5>
-                                  <p class="cubo-text p-3 text-justify">{{video.description}}</p>
-                                  <p class="cubo-text p-3"><small class="text-muted">{{video.datetime}}</small></p>
-                                </div>
-                              </a>
-                          </div>
+                    <div class="col-sm 12 col-md-4 col-md-4 col-md-4 py-2">
+                      <a href="/player/{{video.title}}" class="text-decoration-none">
+                      <div class="cubo">
+                        <img src='{{video.thumnail}}' class="rounded cubo-img-top" alt="{{video.title}}"/>
+                        <div class="cubo-body p-3">
+                          <h5 class="cubo-title p-3 text-left">{{video.title}}</h5>
+                          <p class="cubo-text p-3 text-justify">{{video.description}}</p>
+                          <p class="cubo-text p-3"><small class="text-muted">{{video.datetime}}</small></p>
                         </div>
-                        {% endfor %}
-                        {% endif %} 
+                      </a>
+                      </div>
+                    </div>
+                    {% endfor %}
+                    {% endif %} 
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-
-
         </div>
        
 <!--</div>-->

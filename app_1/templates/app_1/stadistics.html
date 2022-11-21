@@ -1,4 +1,3 @@
-
 {% extends 'app_1/base2.html' %}
 {% load static %}
 
@@ -14,15 +13,16 @@
   <h1>ESTADISTICAS</h1>
 
   <div class="container">
-    {% for v in videos %} 
+    {% for vid in videos %} 
       <div class="gr">
-        <h3> {{v.title}}</h3>
+        <canvas id="myChart"></canvas>
+        <h3> {{vid.title}}</h3>
         <div class="context">
           <div class="text">
-            <p id="likes"> {{v.likes}}</p>
-            <p id="dislikes"> {{v.dislikes}}</p>
+            <p id="likes"> {{vid.likes}}</p>
+            <p id="dislikes"> {{vid.dislikes}}</p>
           </div>
-          <canvas id="myChart"></canvas>
+          
         </div>
       </div>
       <script type="text/javascript" src="../../static/js/grafica.js"></script>
