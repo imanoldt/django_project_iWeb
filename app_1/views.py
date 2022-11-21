@@ -83,3 +83,11 @@ def player(request,titulo):
         'video' : video, 
     }
     return render(request,'app_1/player.html', context)
+
+def stadistics(request):
+    video=Video.objects.all()
+    
+    #context = {
+    #    'video' : video, 
+    #}
+    return render(request,'app_1/stadistics.html',{"videos":video})

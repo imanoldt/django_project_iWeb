@@ -1,0 +1,35 @@
+
+{% extends 'app_1/base2.html' %}
+{% load static %}
+
+
+{% block estilo %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="../../static/css/stadistics.css">
+
+{% endblock %}
+
+
+{% block contentVideo %}
+  <h1>ESTADISTICAS</h1>
+
+  <div class="container">
+    {% for v in videos %} 
+      <div class="gr">
+        <h3> {{v.title}}</h3>
+        <div class="context">
+          <div class="text">
+            <p id="likes"> {{v.likes}}</p>
+            <p id="dislikes"> {{v.dislikes}}</p>
+          </div>
+          <canvas id="myChart"></canvas>
+        </div>
+      </div>
+      <script type="text/javascript" src="../../static/js/grafica.js"></script>
+    {% endfor %}
+  </div>
+{% endblock %} 
+
+
+
+

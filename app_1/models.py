@@ -32,6 +32,7 @@ class Video(models.Model):  # MODIFICADO
     length = models.IntegerField(null=True, default=0)
     datetime = models.DateTimeField(auto_now=True, blank=False, null=False)
     likes = models.IntegerField(null=True, default=0)
+    dislikes = models.IntegerField(null=True, default=0)
     cathegory = models.CharField(
         max_length=300, null=True, choices=VIDEO_CATHEGORY, default='')
     channel = models.ForeignKey(Channel, on_delete=models.CASCADE,

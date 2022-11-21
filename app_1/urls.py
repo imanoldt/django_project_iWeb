@@ -10,6 +10,7 @@ urlpatterns = [
     #path('base/videos', views.base_main, name='videos'), 
     path('base/videos', VideoListView.as_view(), name='videos'),
     path('base2/profile/', ProfileListView.as_view(), name='profile'),
+    path('base2/est/', views.stadistics, name='stadistics'),
     path('player/<slug:titulo>', views.player, name='player'),
     path('player/', views.player, name='player'),
     path('upload/', views.upload, name='upload'),
