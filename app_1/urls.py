@@ -1,13 +1,12 @@
 from django.urls import include, path
 from . import views
-from app_1.views import VideoListView, ProfileListView
+from app_1.views import VideoListView, ProfileListView, sign_upView, login
 
 #from django.contrib.auth.views import login, logout_then_login
 
 urlpatterns = [
-    path('', views.login, name='login'),
-    path('sign_up/', views.sign_up, name='sign_up'),
-    #path('base/videos', views.base_main, name='videos'), 
+    path('', login.as_view(), name='login'),
+    path('sign_up/', sign_upView.as_view(), name='sign_up'),
     path('base/videos', VideoListView.as_view(), name='videos'),
     path('base2/profile/', ProfileListView.as_view(), name='profile'),
     path('base2/est/', views.stadistics, name='stadistics'),

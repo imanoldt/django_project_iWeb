@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'app_1',
     'crispy_forms',
+    'crispy_bootstrap5',
     'allauth',#GOOGLE
     'allauth.account',
     'allauth.socialaccount',
