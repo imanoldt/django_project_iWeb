@@ -1,5 +1,6 @@
 .body{
-    background-color: #1a1a1c;
+    background: url("../img/fondo1.png");
+    background-size:cover;
 }
 h1{
     text-align: center;
@@ -17,13 +18,13 @@ h3{
    
 }
 .context{
-    background-color: rgb(151, 38, 38);
+    background-color: rgba(255, 255, 255, 0.03);
     width: 100%;
 }
 .text{
     display: flex;
     flex-wrap: wrap;
-    color: rgb(255, 255, 255);
+    color: rgba(255,255,255,.03);
     width: 100%;
    
 }
@@ -36,12 +37,25 @@ h3{
     padding: 10px 10px 30px;
     border-radius: 10px;
     border:1px solid transparent;
-    background-image:"IMAGENES/" ;
     backdrop-filter:blur(1rem);
     
     box-shadow: 1.3rem 1.3rem 1.3rem rgba(0, 0, 0, 0.3);
     border-top-color:  rgba(255, 255, 255, 0.228);
     border-left-color: rgba(255, 255, 255, 0.228);
+}
+
+.gr1{
+    margin:3%;
+    height: auto ;
+    padding: 10px 10px 30px;
+    border-radius: 10px;
+    border:1px solid transparent;
+    backdrop-filter:blur(1rem);
+    width: 90%;
+    box-shadow: 1.3rem 1.3rem 1.3rem rgba(0, 0, 0, 0.3);
+    border-top-color:  rgba(255, 255, 255, 0.228);
+    border-left-color: rgba(255, 255, 255, 0.228);
+
 }
 #myChart{
     

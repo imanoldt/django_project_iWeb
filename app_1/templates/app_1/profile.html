@@ -1,76 +1,92 @@
 <!DOCTYPE html>
 {%extends 'app_1/base2.html' %}
-
 <!--COGER NOMBRE USUARIO DE INICIO DE SESION-->
 {% load account %}
 {% user_display user %}
+{% load static %}
 
 
-{% load static%}
 {% block estilo %}
-<link rel="stylesheet" href="../../static/css/video.css">
-  <link rel="stylesheet" href="../../static/css/styleProfile2.css">
-  <link rel="stylesheet" href="../../static/css/styleProfile.css">
-{% endblock %}
+  <link rel="stylesheet" href="../../static/css/profile.css"> 
 
+{% endblock %}
 {%block title%}
- <p>YouFlix</p>
+ YouFlix
 {%endblock%} 
 
 {% block contentVideo %}
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
 <!--<div class="container">-->
-        <div class="row justify-content-center">
+  <!--
+        <div class="row justify-content-center" id="titulo">
           <div class="col-12 col-sm-8 col-lg-6">
-            <!-- Section Heading-->
+          
             <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
               <h3 class="dysplay-6 text-danger" id="title">YOUFLIX</h3>
               <div class="line"></div>
             </div>
           </div>
         </div>
+      -->
         <div class="row">
-          <!-- Single Advisor-->
-          <div class="col-12 col-xs-3 col-sm-3 col-lg-3">
-
+          <div class="col-12 col-xs-3 col-sm-3 col-lg-3" id="panelI">
             
-            <figure class="snip1336">
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87" />
-              <figcaption>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample4.jpg" alt="profile-sample4" class="profile" />
-                <h2>Hans Down<span>Engineer</span></h2>
-                <p>efwrferferferferferferferferfer</p>
-              </figcaption>
-            </figure>
+                <h3 class="dysplay-6 " id="title">YOUFLIX</h3>
+                <div class="content">
+                  <div class="header-prof"> 
+                    <figure>
+                      <img class='imgPersona' src="https://images.unsplash.com/photo-1663255278049-cb6021dce60b?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NjU0MDk1Nzc&ixlib=rb-1.2.1&q=80" alt="none">
+                    </figure>
+                    <h1>{% user_display user %}</h1>
+                    <p>Designer</p>
+                    <p><svg viewBox="0 0 384 512" width="10" title="map-marker-alt">
+                        <path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z" />
+                        </svg> ABC, Oryo
+                    </p>
+                  </div>
+                  <!--                 
+                     <div class="bootom">
+                    <div class="foo">
+                      <a href="#">Message</a>
+                      
+                    </div>
+                  </div>
+                  -->
 
+                </div>
+           
+            <!--container lado derecho-->
           </div>
-          <div class="col-12 col-xs-9 col-sm-9 col-lg-9">
+          <div class="col-12 col-xs-9 col-sm-9 col-lg-9" id="panelD">
             <div class="scroll-bg" >
               <div class="scroll-div" >
                 <div class="scroll-object" >
-                  <div class="row mt-5">
+                  <div class="row mt-4" >
                     {% if object_list %} {% comment %} COMPROBACION DE SI NOS DEVUELVE UNA LISTA {% endcomment %}
                     {% for video in object_list %}  {% comment %} RECORREMOS {% endcomment %}
-                    <div class="col-sm 12 col-md-4 col-md-4 col-md-4 py-2">
+                    <div class="col-sm 12 col-md-4 col-md-4 col-md-4  py-2">
                       <a href="/player/{{video.title}}" class="text-decoration-none">
                       <div class="cubo">
-                        <img src='{{video.thumnail}}' class="rounded cubo-img-top" alt="{{video.title}}"/>
+                        <img src="{{video.thumnail}}" class="rounded cubo-img-top" alt="{{video.title}}"/>
                         <div class="cubo-body p-3">
                           <h5 class="cubo-title p-3 text-left">{{video.title}}</h5>
                           <p class="cubo-text p-3 text-justify">{{video.description}}</p>
-                          <p class="cubo-text p-3"><small class="text-muted">{{video.datetime}}</small></p>
+                          <p class="cubo-text p-3"><small class="text">{{video.datetime}}</small></p>
                         </div>
                       </a>
                       </div>
                     </div>
                     {% endfor %}
-                    {% endif %} 
+                    {% endif %}
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+
+
         </div>
        
 <!--</div>-->
