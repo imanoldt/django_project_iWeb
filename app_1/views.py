@@ -1,4 +1,5 @@
 from django.http import HttpResponseRedirect
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
@@ -7,6 +8,7 @@ from django.views.generic import ListView, DetailView, View
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib import messages
 from django.contrib.auth import login as login_process
+from django.contrib.auth import authenticate
 
 
 # importar modelo video
@@ -18,21 +20,26 @@ PUBLIC_DOMAIN_NAME = '127.0.0.1:8000'
 class login(View):
     def get(self, request):
         form = AuthenticationForm()
+        print(form)
         return render(request, "Login-Bootstrap-5/index.html", {"form": form})
 
     def post(self, request):
-        form = AuthenticationForm(request.POST)
-        if form.is_valid():
+        print(request.POST)
+        form = AuthenticationForm(data = request.POST)  ###aqui daba el fallo 
+        print(form.errors.as_data)
+        print(form.is_bound)
+        if form.is_valid():  ## porque NO era valido :)
             nom_usu = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
-            usu = authenticate(username=nom_usu, password=password)
+            usu = authenticate(username=nom_usu, password=password)  ## y aqui tambn 
             if usu is not None:
                 login_process(request, usu)
-                return HttpResponseRedirect('/base/videos')
+                return redirect('videos')
+                ##return HttpResponse('hola') ##le pasas al redirect que tenias antes
             else:
-                messages.error(request, "Usuario incorrecto")
+                return HttpResponse('no funciono 1 ')
         else:
-            messages.error(request, "Usuario o contraseña incorrectos")
+            return HttpResponse('no funciono 2')
 
 
 class sign_upView(View):

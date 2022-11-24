@@ -116,12 +116,16 @@
             <h1 class="font-weight-bold mb-4">Bienvenido De Nuevo</h1>
 
             <!-- Formulario_INICIO_SESION -->
-            <form class="mb-5" method="post" action="">{% comment %} CAMBIOSLOGIN {% endcomment %}
+
+
+            <form class="mb-5" method="post" action="/">{% comment %} CAMBIOSLOGIN {% endcomment %}
               {% csrf_token %}
               {{form | crispy}}
 
               <input type="submit" value="Ingresar" class="btn btn-danger btn-block btn-lg shadow-sm" />
             </form>
+
+
 
             <p class="font-weight-bold text-center text-muted">
               O Inicia Sesión Con
