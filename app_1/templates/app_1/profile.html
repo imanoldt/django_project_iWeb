@@ -5,9 +5,8 @@
 {% user_display user %}
 {% load static %}
 
-
 {% block estilo %}
-  <link rel="stylesheet" href="../../static/css/profile.css"> 
+  <link rel="stylesheet" href="{% static 'css/profile.css'%}"> 
 
 {% endblock %}
 {%block title%}
@@ -91,3 +90,4 @@
        
 <!--</div>-->
 {% endblock %}
+</html>
