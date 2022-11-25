@@ -24,10 +24,10 @@ class login(View):
         return render(request, "Login-Bootstrap-5/index.html", {"form": form})
 
     def post(self, request):
-        print(request.POST)
+        ##print(request.POST)
         form = AuthenticationForm(data = request.POST)  ###aqui daba el fallo 
-        print(form.errors.as_data)
-        print(form.is_bound)
+       ## print(form.errors.as_data)
+       ## print(form.is_bound)
         if form.is_valid():  ## porque NO era valido :)
             nom_usu = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
