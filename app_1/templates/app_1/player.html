@@ -69,58 +69,19 @@
             </h4>
 
             <ul class="list-group mb-5">
-              <li
-                class="list-group-item d-flex justify-content-between lh-sm bg-secondary"
-              >
-                <div>
-                  <video
-                    class="embed-responsive embed-responsive-16by9 video-tam"
-                    controls
-                  >
-                    <source src="videoplayback.mp4" type="video/mp4" />
-                  </video>
-                  <span class="text-light">12:04</span>
-                </div>
-              </li>
-              <li
-                class="list-group-item d-flex justify-content-between lh-sm bg-secondary"
-              >
-                <div>
-                  <video
-                    class="embed-responsive embed-responsive-16by9 video-tam"
-                    controls
-                  >
-                    <source src="videoplayback.mp4" type="video/mp4" />
-                  </video>
-                  <span class="text-light">12:04</span>
-                </div>
-              </li>
-              <li
-                class="list-group-item d-flex justify-content-between lh-sm bg-secondary"
-              >
-                <div>
-                  <video
-                    class="embed-responsive embed-responsive-16by9 video-tam"
-                    controls
-                  >
-                    <source src="videoplayback.mp4" type="video/mp4" />
-                  </video>
-                  <span class="text-light">12:04</span>
-                </div>
-              </li>
-              <li
-                class="list-group-item d-flex justify-content-between lh-sm bg-secondary"
-              >
-                <div>
-                  <video
-                    class="embed-responsive embed-responsive-16by9 video-tam"
-                    controls
-                  >
-                    <source src="videoplayback.mp4" type="video/mp4" />
-                  </video>
-                  <span class="text-light m-2">12:04</span>
-                </div>
-              </li>
+              {% for video in videos_r %}
+              <a href="/player/{{video.title}}" class="text-decoration-none">
+                <li class="list-group-item d-flex justify-content-between lh-sm bg-secondary">
+                  <div>
+                    <video class="embed-responsive embed-responsive-16by9 video-tam"
+                      controls >
+                      <source src="{{video.thumnail}}" type="video/mp4" />
+                    </video>
+                    <span class="text-light">{{video.title}}</span>
+                  </div>
+                </li>
+              </a>
+              {% endfor %}
             </ul>
           </div>
         </div>

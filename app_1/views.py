@@ -82,8 +82,10 @@ def upload(request):
 def player(request, titulo):
 
     video = Video.objects.get(title=titulo)
+    videos_r=Video.objects.exclude(title =titulo)
     context = {
         'video': video,
+        'videos_r': videos_r,
     }
     return render(request, 'app_1/player.html', context)
 
