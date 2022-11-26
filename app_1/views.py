@@ -8,6 +8,7 @@ from django.views.generic import ListView, DetailView, View
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib import messages
 from django.contrib.auth import login as login_process
+from django.contrib.auth import login as logout_process
 from django.contrib.auth import authenticate
 
 
@@ -26,8 +27,6 @@ class login(View):
     def post(self, request):
         ##print(request.POST)
         form = AuthenticationForm(data = request.POST)  ###aqui daba el fallo 
-       ## print(form.errors.as_data)
-       ## print(form.is_bound)
         if form.is_valid():  ## porque NO era valido :)
             nom_usu = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
@@ -60,6 +59,10 @@ class sign_upView(View):
                 messages.error(request, form.error_messages[mensaje])
             return render(request, "Login-Bootstrap-5/sign_up.html", {"form": form})
 
+class LogOut(View):
+    def get(self, request):
+        logout_process(request)
+        return redirect('login')
 
 class VideoListView (ListView):
     model = Video

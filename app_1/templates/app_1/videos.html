@@ -16,11 +16,11 @@
     <p class="text-bg-light">texto</p>
 
     {% if user.is_authenticated %}
-  Bienvenido {% user_display user %}
-  
-    {% else %}
-  no autenticado
-    {% endif %}
+    Bienvenido {% user_display user %} &nbsp;&nbsp; <a href="{% url 'logout' %}">Cerrar Sesion</a>
+   
+     {% else %}
+   no autenticado
+     {% endif %}
   </div>
     <div class="scroll-bg" >
       <div class="scroll-div" >

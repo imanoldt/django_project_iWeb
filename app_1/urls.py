@@ -1,11 +1,12 @@
 from django.urls import include, path
 from . import views
-from app_1.views import VideoListView, ProfileListView, sign_upView, login
+from app_1.views import VideoListView, ProfileListView, sign_upView, login, LogOut
 
 #from django.contrib.auth.views import login, logout_then_login
 
 urlpatterns = [
     path('', login.as_view(), name='login'),
+    path('', LogOut.as_view(), name='logout'),
     path('sign_up/', sign_upView.as_view(), name='sign_up'),
     path('base/videos', VideoListView.as_view(), name='videos'),
     path('base2/profile/', ProfileListView.as_view(), name='profile'),

@@ -1,0 +1,52 @@
+[
+  {
+    "model": "app_1.channel",
+    "pk": 1,
+    "fields": {
+      "channel_name": "ImanolDT",
+      "subscribers": 2000,
+      "user": 4
+    }
+  },
+  {
+    "model": "app_1.channel",
+    "pk": 2,
+    "fields": {
+      "channel_name": "Irene",
+      "subscribers": 1000,
+      "user": 5
+    }
+  },
+  {
+    "model": "app_1.channel",
+    "pk": 3,
+    "fields": {
+      "channel_name": "zurdo",
+      "subscribers": 10000
+    }
+  },
+  {
+    "model": "app_1.channel",
+    "pk": 69,
+    "fields": {
+      "channel_name": "Maider",
+      "subscribers": 10000
+    }
+  },
+  {
+    "model": "app_1.channel",
+    "pk": 70,
+    "fields": {
+      "channel_name": "Maider",
+      "subscribers": 10000
+    }
+  },
+  {
+    "model": "app_1.channel",
+    "pk": 80,
+    "fields": {
+      "channel_name": "Maider",
+      "subscribers": 10000
+    }
+  }
+]

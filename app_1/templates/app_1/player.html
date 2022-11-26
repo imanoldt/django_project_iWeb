@@ -21,7 +21,6 @@
 
     <meta name="generator" content="Hugo 0.104.2" />
 
-
     <link
       rel="canonical"
       href="https://getbootstrap.com/docs/5.2/examples/checkout/"
@@ -29,14 +28,11 @@
 
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
-
   </head>
 
   <body class="bg-dark">
     <div class="container">
       <main>
-
-
         <div class="py-5 text-center">
           <img
             class="d-block mx-auto mb-4 img-logo"
@@ -54,12 +50,11 @@
             </video>
             <span
               class="tit-video badge bg-danger rounded-pill w-100 text-start"
-              > {{ video.title }}</span
+            >
+              {{ video.title }}</span
             >
             <div class="cont-descrip">
-              <p class="descrip">
-                {{ video.description }}
-              </p>
+              <p class="descrip">{{ video.description }}</p>
             </div>
           </div>
           <div class="col-md-5 col-lg-4 order-md-last">
@@ -71,10 +66,14 @@
             <ul class="list-group mb-5">
               {% for video in videos_r %}
               <a href="/player/{{video.title}}" class="text-decoration-none">
-                <li class="list-group-item d-flex justify-content-between lh-sm bg-secondary">
+                <li
+                  class="list-group-item d-flex justify-content-between lh-sm bg-secondary"
+                >
                   <div>
-                    <video class="embed-responsive embed-responsive-16by9 video-tam"
-                      controls >
+                    <video
+                      class="embed-responsive embed-responsive-16by9 video-tam"
+                      controls
+                    >
                       <source src="{{video.thumnail}}" type="video/mp4" />
                     </video>
                     <span class="text-light">{{video.title}}</span>
@@ -91,7 +90,5 @@
         <p class="mb-1">&copy; 2022–2023 YouFlix</p>
       </footer>
     </div>
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="form-validation.js"></script>
   </body>
 </html>
