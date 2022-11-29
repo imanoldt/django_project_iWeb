@@ -24,13 +24,12 @@
       crossorigin="anonymous"
     ></script>
     <!-- Wrap inside the head tag JQUERY HEAD TAG -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="../../static/js/main.js"></script>
     <link rel="stylesheet" href="../../static/css/animation.css" />
     {% comment %} STYLE {% endcomment %}
     <link rel="stylesheet" href="../../static/css/style.css" />
 
-    
     <link
       rel="icon"
       type="image/x-icon"
@@ -39,17 +38,12 @@
     <title>YouFlix</title>
   </head>
   <body class="bg-dark">
-
     <div id="preloader">
-      <img src="../../static/img/Logo_negro_blanco.webp" id="tit-preloader">
+      <img src="../../static/img/Logo_negro_blanco.webp" id="tit-preloader" />
       <div id="pulsar">
-        
-          <div class="pulsar__dot">
-
-                  </div>
+        <div class="pulsar__dot"></div>
       </div>
     </div>
-
 
     <section>
       <div class="row g-0">
@@ -117,15 +111,16 @@
 
             <!-- Formulario_INICIO_SESION -->
 
-
-            <form class="mb-5" method="post" action="/">{% comment %} CAMBIOSLOGIN {% endcomment %}
-              {% csrf_token %}
+            <form class="mb-5" method="post" action="/">
+              {% comment %} CAMBIOSLOGIN {% endcomment %} {% csrf_token %}
               {{form | crispy}}
 
-              <input type="submit" value="Ingresar" class="btn btn-danger btn-block btn-lg shadow-sm" />
+              <input
+                type="submit"
+                value="Ingresar"
+                class="btn btn-danger btn-block btn-lg shadow-sm"
+              />
             </form>
-
-
 
             <p class="font-weight-bold text-center text-muted">
               O Inicia Sesión Con
@@ -153,7 +148,8 @@
         </div>
       </div>
     </section>
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> {% comment %} PRELOADER {% endcomment %}
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    {% comment %} PRELOADER {% endcomment %}
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
       integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"

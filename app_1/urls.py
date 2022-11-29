@@ -2,7 +2,6 @@ from django.urls import include, path
 from . import views
 from app_1.views import VideoListView, ProfileListView, sign_upView, login, LogOut
 
-#from django.contrib.auth.views import login, logout_then_login
 
 urlpatterns = [
     path('', login.as_view(), name='login'),
@@ -15,6 +14,4 @@ urlpatterns = [
     path('player/', views.player, name='player'),
     path('upload/', views.upload, name='upload'),
     path('__debug__/', include('debug_toolbar.urls')),
-    #path('base/', views.base, name='base'),
-    #path('base2/', views.base2, name='base2'),
 ]

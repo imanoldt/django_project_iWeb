@@ -10,31 +10,30 @@ from django.contrib import messages
 from django.contrib.auth import login as login_process
 from django.contrib.auth import login as logout_process
 from django.contrib.auth import authenticate
-
-
-# importar modelo video
 from app_1.models import Video
+
 
 PUBLIC_DOMAIN_NAME = '127.0.0.1:8000'
 
 
 class login(View):
+
     def get(self, request):
         form = AuthenticationForm()
         print(form)
         return render(request, "Login-Bootstrap-5/index.html", {"form": form})
 
     def post(self, request):
-        ##print(request.POST)
-        form = AuthenticationForm(data = request.POST)  ###aqui daba el fallo 
-        if form.is_valid():  ## porque NO era valido :)
+
+        form = AuthenticationForm(data=request.POST)
+        if form.is_valid():
             nom_usu = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
-            usu = authenticate(username=nom_usu, password=password)  ## y aqui tambn 
+            usu = authenticate(
+                username=nom_usu, password=password)
             if usu is not None:
                 login_process(request, usu)
                 return redirect('videos')
-                ##return HttpResponse('hola') ##le pasas al redirect que tenias antes
             else:
                 return HttpResponse('no funciono 1 ')
         else:
@@ -59,10 +58,13 @@ class sign_upView(View):
                 messages.error(request, form.error_messages[mensaje])
             return render(request, "Login-Bootstrap-5/sign_up.html", {"form": form})
 
+
 class LogOut(View):
+    
     def get(self, request):
         logout_process(request)
         return redirect('login')
+
 
 class VideoListView (ListView):
     model = Video
@@ -73,19 +75,22 @@ class ProfileListView (ListView):
     model = Video
     template_name = 'app_1/profile.html'
 
+
 class base (DetailView):
     template_name = 'app_1/base.html'
+
 
 class base (DetailView):
     template_name = 'app_1/base2.html'
 
+
 def upload(request):
     return render(request, 'app_1/upload.html')
 
-def player(request, titulo):
 
+def player(request, titulo):
     video = Video.objects.get(title=titulo)
-    videos_r=Video.objects.exclude(title =titulo)
+    videos_r = Video.objects.exclude(title=titulo)[:3]
     context = {
         'video': video,
         'videos_r': videos_r,

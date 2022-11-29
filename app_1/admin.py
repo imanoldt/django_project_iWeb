@@ -2,15 +2,6 @@ from django.contrib import admin
 from .models import Video, Channel, Comment
 
 
-#MODIFICADO 
-
-""" 
-La administracion de los modelos se convierten en clases
-Administracion del panel admin
-Cambios en el listado de Videos
- """
-
-
 @admin.register(Video)
 class UserAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'path', 'thumnail', 'cathegory', 'length')
@@ -22,13 +13,9 @@ class UserAdmin(admin.ModelAdmin):
 @admin.register(Channel)
 class UserAdmin(admin.ModelAdmin):
     list_display = ('id', 'channel_name', 'subscribers')
+    ordering = ('channel_name',)
+    search_fields = ('channel_name',)
 
 @admin.register(Comment)
 class UserAdmin(admin.ModelAdmin):
     list_display = ('id', 'title')
-
-
-
-""" admin.site.register(User)
-admin.site.register(Video) 
-admin.site.register(Channel)"""

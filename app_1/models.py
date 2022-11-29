@@ -15,20 +15,23 @@ USER_AUTH = 'auth.User'
 
 
 class Channel(models.Model):
+
     channel_name = models.CharField(
         max_length=50, blank=False, null=False, default='')
     subscribers = models.IntegerField(default=0, blank=False, null=False)
     user = models.OneToOneField(
         USER_AUTH, on_delete=models.CASCADE, blank=False, null=True, default='')
 
+    def __str__(self):
+        return self.channel_name
 
-class Video(models.Model):  # MODIFICADO
+
+class Video(models.Model):
+
     title = models.CharField(max_length=30, default='')
     description = models.TextField(max_length=300, null=True)
     path = models.CharField(max_length=2000, null=True)
-    # MINIATURA DE IMAGEN PARA MEJOR OPTIMIZACION DE LA PAGINA
     thumnail = models.CharField(max_length=2000, null=True)
-    # DURACION DEL VIDEO ENTERO
     length = models.IntegerField(null=True, default=0)
     datetime = models.DateTimeField(auto_now=True, blank=False, null=False)
     likes = models.IntegerField(null=True, default=0)
@@ -38,12 +41,16 @@ class Video(models.Model):  # MODIFICADO
     channel = models.ForeignKey(Channel, on_delete=models.CASCADE,
                                 blank=True, null=True, default='', related_name='videos')
 
-    def __str__(self):  # DEVUELVE STRING DE LO QUE QUEREMOS VISUALIZAR / TOSTRING() _ JAVA
+    def __str__(self):
         return self.title
 
 
-class Comment(models.Model):  # MODIFICADO
+class Comment(models.Model):
+
     title = models.TextField(max_length=300, default='')
     dateTime = models.DateTimeField(auto_now=True, blank=False, null=False)
     video = models.ForeignKey(
         Video, on_delete=models.CASCADE, blank=False, null=True, default='', related_name='comentarios')
+
+    def __str__(self):
+        return self.title
