@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
-from django.views.generic import ListView, DetailView, View
+from django.views.generic import ListView, DetailView, View, TemplateView
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib import messages
 from django.contrib.auth import login as login_process
@@ -15,6 +15,14 @@ from app_1.models import Video
 
 PUBLIC_DOMAIN_NAME = '127.0.0.1:8000'
 
+
+
+
+class error_404handle(TemplateView):
+    template_name = 'error/404NotFound.html'
+
+class error_500handle(TemplateView):
+    template_name = 'error/500NotFound.html'
 
 class login(View):
 
@@ -60,7 +68,7 @@ class sign_upView(View):
 
 
 class LogOut(View):
-    
+
     def get(self, request):
         logout_process(request)
         return redirect('login')
