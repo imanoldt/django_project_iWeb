@@ -1,7 +1,3 @@
-$.getScript("ajax/test.js", function () {
-  alert("Load was performed.");
-});
-
 $(document).ready(function () {
   setTimeout(function () {
     $("body").removeClass("cut");

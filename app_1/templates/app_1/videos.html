@@ -11,21 +11,29 @@
   {% endblock %} 
   {% block contentVideo %}
   <div class="container">
-    <div>
-    <h1 class="dysplay-6 " id="title">YOUFLIX</h1>
-    <p class="text-bg-light">texto</p>
 
-    {% if user.is_authenticated %}
-    Bienvenido {% user_display user %} &nbsp;&nbsp; <a href="{% url 'logout' %}">Cerrar Sesion</a>
-   
-     {% else %}
-   no autenticado
-     {% endif %}
-  </div>
+
+
+     <nav class="navbar navbar-dark bg-dark p-2 mt-2">
+      <!-- Navbar content -->
+      <h1 class="dysplay-6 " id="title">YOUFLIX</h1>
+      {% if user.is_authenticated %}
+      <p class="content-nav-izq text-light"> Bienvenido {% user_display user %}&nbsp; </p>
+      <img class="rounded-circle" src="{{ user.socialaccount_set.all.0.get_avatar_url }}" alt="userImg" />
+      <a href="{% url 'logout' %}">
+        <button type="button" class="btn btn-danger p-2 m-1">Cerrar Sesion</button>
+      </a>
+       {% else %}
+       <a href="{% url 'login' %}">
+        <button type="button" class="btn btn-danger p-2 m-1">Iniciar Sesion</button>
+      </a>
+       {% endif %}
+    </nav>
+
     <div class="scroll-bg" >
       <div class="scroll-div" >
         <div class="scroll-object" >
-          <div class="dashboard-content text-center px-3 pt-4" >
+          <div class="dashboard-content text-center px-3" >
             <div class="row mt-5">
               {% if object_list %} {% comment %} COMPROBACION DE SI NOS DEVUELVE UNA LISTA {% endcomment %}
               {% for video in object_list %}  {% comment %} RECORREMOS {% endcomment %}

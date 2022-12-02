@@ -1,93 +1,8 @@
-/* 
-.preload {
-    background-image: url("../img/galaxy2.jpg");
-    object-fit: cover;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 1s ease 3s;
-  }
-  
-
-  .c {
-    fill: #f1f1f1;
-  }
-  .d {
-    fill: #5b5b5b;
-  }
-  
-  h3 {
-    position: absolute;
-    top: 75%;
-    transform: translateY(-75%);
-    color: white;
-    font-size: 40px;
-    font-family: sans-serif;
-  }
-  
-  .preload-finish {
-    opacity: 0;
-    pointer-events: none;
-  }
-  
-  .plane {
-    width: 20%;
-    animation: airplane 1s ease infinite alternate;
-  }
-  
-  .cloud1,
-  .cloud2,
-  .cloud3 {
-    height: 100px;
-    position: absolute;
-    z-index: -1;
-  }
-  
-  .cloud1 {
-    top: 25%;
-    transform: translate(100%, -25%);
-    animation: clouds 13s ease infinite;
-  }
-  
-  .cloud2 {
-    top: 50%;
-    transform: translate(100%, -50%);
-    animation: clouds 20s ease infinite;
-  }
-  
-  .cloud3 {
-    top: 75%;
-    transform: translate(100%, -75%);
-    animation: clouds 16s ease infinite;
-  }
-  
-  @keyframes airplane {
-    from {
-      transform: translateY(0px);
-    }
-    to {
-      transform: translateY(50px);
-    }
-  }
-  
-  @keyframes clouds {
-    from {
-      right: 0%;
-    }
-    to {
-      right: 130%;
-    }
-  }
-*/
-  #tit-preloader {
-    position: absolute;
-    color: white;
-    z-index: 101;
-  }
+#tit-preloader {
+  position: absolute;
+  color: white;
+  z-index: 101;
+}
 
 #preloader {
   position: absolute;
@@ -100,7 +15,7 @@
   align-items: center;
   z-index: 99;
   background-color: #121212;
-  transition: top 500ms linear 500ms ;
+  transition: top 500ms linear 500ms;
   transition-timing-function: ease-in-out;
 }
 
@@ -139,32 +54,31 @@
 
 @keyframes pulsardot {
   0% {
-      transform: scale(-1);
+    transform: scale(-1);
   }
 
   50% {
-      transform: scale(40);
+    transform: scale(40);
   }
 
   100% {
-      transform: scale(-1);
+    transform: scale(-1);
   }
 }
 
-
 @keyframes pulsar {
   0% {
-      width: 0px;
-      height: 0px;
+    width: 0px;
+    height: 0px;
   }
 
   50% {
-      width: 1000px;
-      height: 1000px;
+    width: 1000px;
+    height: 1000px;
   }
 
   100% {
-      width: 0px;
-      height: 0px;
+    width: 0px;
+    height: 0px;
   }
 }

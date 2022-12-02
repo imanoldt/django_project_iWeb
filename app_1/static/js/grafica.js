@@ -1,5 +1,3 @@
-
-
 const ctx_e = document.getElementById("myChart").getContext("2d");
 
 new Chart(ctx_e, {

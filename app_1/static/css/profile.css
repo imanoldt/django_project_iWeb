@@ -1,215 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+.body {
+  background: url("../img/fondo.png");
+  background-size: cover;
+}
+#title {
+  margin-top: 5%;
+  text-align: center;
+  color: #dd1818;
+  font-size: 40px;
+  text-shadow: 5px 10px rgba(16, 16, 16, 0.8);
+  width: 100%;
+}
 
+#panelD {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.scroll-bg {
+  margin-top: 2%;
+  border-radius: 50px;
+  background: rgba(257, 257, 257, 0.4);
+  backdrop-filter: blur(1.9px);
+  overflow-x: hidden;
+  overflow-y: hidden;
+  overflow: hidden;
+}
 
+.scroll-div {
+  width: 97%;
+  height: 1000px;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Raleway', sans-serif;
+.cubo {
+  background-color: rgb(32, 30, 30);
+  border-radius: 20px;
+  margin-left: 5%;
+  height: auto;
+}
+.cubo-img-top {
+  object-fit: cover;
+  width: 100%;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 20px;
+}
+/*tarjeta usuario*/
+.container {
+  width: 100%;
+  height: 30%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content {
+  max-width: 300px;
+  height: 40%;
+  min-height: 30%;
+  background: rgba(257, 257, 257, 0.4);
+  backdrop-filter: blur(1.9px);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+figure {
+  max-width: 100%;
+  display: block;
+  text-align: center;
+  padding: 0.5%;
+}
+figure .imgPersona {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+figure::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgb(255, 0, 0);
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+figure::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 8px;
+  border: 2px solid rgb(253, 241, 131);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.header-prof {
+  width: 100%;
+  text-align: center;
+
+  font-size: 23px;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+}
+.header-prof p {
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+}
+
+.card {
+  display: flex;
+  gap: 5px;
+}
+
+.card div {
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.foo {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  padding: 1% 0px;
+}
+.foo a:nth-child(2) {
+  border: 1px solid orangered;
+  background: none;
+  color: #000;
+}
+.foo a {
+  width: 100%;
+  border-radius: 5px;
+  padding: 1%;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background: #000;
+  font-size: 14px;
+  border: 1px solid #000;
+}
+/*cubo interior*/
+h5 {
+  color: #dd1818;
+}
+.cubo-text {
+  color: rgb(205, 198, 198);
+}
+.text {
+  color: #dd1818;
+}
+
+@media screen and (max-width: 1450px) {
+  .container {
   }
-  .body{
-    /*overflow-y:hidden;
-    overflow-x:hidden;*/
-    background: url("../img/fondo.png");
-    background-size:cover;
-  }
-  #title{
-    margin-top: 5%;
-    text-align: center;
-    color: #DD1818;
-    font-size: 40px;
-    text-shadow: 5px 10px rgba(16, 16, 16,0.8);
-    width: 100%;
-    
-  }
-  
-  
-  #panelD{
-    height: 100%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    
-   
-  }
-  .scroll-bg{
-      margin-top: 2%;
-      border-radius: 50px;
-      background: rgba(257, 257, 257, 0.4);
-      backdrop-filter: blur( 1.9px );
-      overflow-x:hidden;
-      overflow-y:hidden;
-      overflow: hidden;
-  }
-  
-  .scroll-div{
-    
-     width: 97%;
-     height: 1000px;
-     scroll-behavior: smooth;
-     overflow-y:scroll;
-  
-   
-  }
-  
-  
-  .cubo{
-      background-color: rgb(32, 30, 30);
-      border-radius: 20px;
-      margin-left: 5%;
-      height:auto;
-  }
-  .cubo-img-top {
-    object-fit:cover ;
-    width: 100%;
-    border-top-left-radius: 40px;
-    border-top-right-radius: 20px;
-   
-  }
-  /*tarjeta usuario*/
-  .container{
-    width:100%;
-    height:30%;
-    min-height:100vh;
-  
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-  }
-  
-  .content{
-    max-width:300px;
-    height: 40%;
-    min-height: 30%;
-    background: rgba(257, 257, 257, 0.4);
-    backdrop-filter: blur( 1.9px );
-    border-radius: 20px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center; 
-  }
-  
-  
-  figure{
-    
-    max-width:100%;
-    display:block;
-    text-align:center;
-    padding:0.5%;
-  
-    
-  }
-  figure .imgPersona{
-    width: 80px;
-    height:80px;
-    border-radius:50%;
-    object-fit: cover;
-    object-position:center;
-    
-  
-  }
-  
-  figure::before{
-    content:'';
-    width:20px;
-    height:20px;
-    border: 2px solid rgb(255, 0, 0); 
-    border-radius:50%;
-    position:absolute;
-    top:10px;
-    right:10px;
-  }
-  figure::after{
-    content:'';
-    width:20px;
-    height:20px;
-    border-radius:8px;
-    border: 2px solid rgb(253, 241, 131); 
-    position:absolute;
-    top:20px;
-    right:20px;
-  }
-  .header-prof{
-    width:100%;
-    text-align:center;
-  
-    font-size:23px;
-    letter-spacing:0.1em;
-    font-weight:500;
-  }
-  .header-prof p{
-    width:100%;
-    text-align:center;
-    font-size:13px;
-    letter-spacing:0.1em;
-    font-weight:500;
-  }
-  /*
-  .bootom{
-    width:100%;
-    height:auto;
-    padding:1% 0.5%;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-  }
-  */
-  .card{
-    display:flex;
-    gap:5px;
-  }
-  
-  .card div{
-   width:30px;
-    height:30px;
-    background: #fff;
-    border-radius:50px;
-    display:flex;
-    justify-content:center;
-    margin:0;
-    padding:0;
-    align-items:center;
-  }
-  
-  .foo{
-    display:flex;
-    gap: 10px;
-    width:100%;
-    padding:1% 0px;
-  }
-  .foo a:nth-child(2){
-    border:1px solid orangered;
-    background: none;
-    color: #000;
-  }
-  .foo a{
-    width: 100%;
-    border-radius:5px;
-    padding:1%;
-    text-align:center;
-    text-decoration:none;
-    color:#fff;
-    background: #000;
-    font-size:14px;
-    border: 1px solid #000;
-  }
-  /*cubo interior*/
-  h5{
-    color: #DD1818;
-    
-  }
-  .cubo-text {
-    color:rgb(205, 198, 198)
-  }
-  .text{
-    color: #DD1818;
-  }
-  
-  
-  @media screen and (max-width: 1450px) {
-   
-  .container{
-    
-   
-  }
-  }
+}
