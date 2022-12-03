@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Video, Channel, Comment
+from .models import Video, Channel, Comment, UploadVideo
 
 
 @admin.register(Video)
@@ -19,3 +19,11 @@ class UserAdmin(admin.ModelAdmin):
 @admin.register(Comment)
 class UserAdmin(admin.ModelAdmin):
     list_display = ('id', 'title')
+
+@admin.register(UploadVideo)  
+class UserAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title', 'cathegory')
+    list_editable = ('title', 'cathegory',)
+    list_filter = ('cathegory',)
+    ordering = ('id', 'title')
+    search_fields = ('id', 'title')

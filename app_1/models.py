@@ -44,7 +44,17 @@ class Video(models.Model):
     def __str__(self):
         return self.title
 
+class UploadVideo(models.Model):
 
+    title = models.CharField(max_length=30, default='')
+    description = models.CharField(max_length=300, null=True)
+    cathegory = models.CharField(max_length=300, null=True, choices=VIDEO_CATHEGORY, default='')
+    file = models.FileField(upload_to="videos",null=True)
+  
+
+    def __str__(self):
+        return self.title
+        
 class Comment(models.Model):
 
     title = models.TextField(max_length=300, default='')

@@ -1,4 +1,5 @@
 {% load static%}
+{% load crispy_forms_tags %}
 
 <!DOCTYPE html>
 <html lang="es">
@@ -22,15 +23,26 @@
 
         <div class="row">
           <div class="col-lg-5 mx-auto">
-            <div class="p-5 bg-white shadow rounded-lg"><img src="https://res.cloudinary.com/mhmd/image/upload/v1557366994/img_epm3iz.png" alt="" width="200" class="d-block mx-auto mb-4 rounded-pill">
+            <div class="p-5 bg-white shadow rounded-lg">
+              <!--
+              <img src="https://res.cloudinary.com/mhmd/image/upload/v1557366994/img_epm3iz.png" alt="" width="200" class="d-block mx-auto mb-4 rounded-pill">
               <h6 class="text-center mb-4 text-muted">
                 Click en UpLoad
               </h6>
+              -->
+              <form action="" class="NewVideoForm" method="post" enctype="multipart/form-data">
+                {% csrf_token %} <!--token de seguridad-->
+                {{form | crispy}}
+                <button type="submit" class="button">ENVIAR</button> <!--submit-> recarga la pagina y envia los datos-->
+               <!-- {{mensaje}}-->
+              </form>
+              
               <!-- Custom bootstrap upload file-->
+              <!--
               <label for="fileUpload" class="file-upload btn btn-danger text-center rounded-pill shadow"><i class="fa fa-upload mr-2"></i>UpLoad...
                 <input id="fileUpload" type="file" class="mx-auto">
               </label>
-
+                -->
     
             </div>
           </div>

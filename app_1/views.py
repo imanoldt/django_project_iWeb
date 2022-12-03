@@ -11,7 +11,7 @@ from django.contrib.auth import login as login_process
 from django.contrib.auth import login as logout_process
 from django.contrib.auth import authenticate
 from app_1.models import Video
-
+from  .forms import NewVideoForm ##importado para upload
 
 PUBLIC_DOMAIN_NAME = '127.0.0.1:8000'
 
@@ -93,8 +93,22 @@ class base (DetailView):
 
 
 def upload(request):
-    return render(request, 'app_1/upload.html')
+  
+    data={
+        'form':NewVideoForm(),
+        #'mensaje':"video no subido",
+    }
+    if request.method=='POST':
+        formulario=NewVideoForm(request.POST, request.FILES)##formulario con los datos 
+        if formulario.is_valid():
+           
+            formulario.save()
+            ##data['mensaje']="Video publicado"
+        else:
+           data['form'] =formulario ##sobreescribo 
 
+    return render(request, 'app_1/upload.html',data)
+    
 
 def player(request, titulo):
     video = Video.objects.get(title=titulo)
