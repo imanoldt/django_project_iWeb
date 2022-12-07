@@ -30,13 +30,13 @@
             new Chart(ctx, {
               type: 'pie',
               data: {
-                labels: ['LIKES', 'DISLIKES'],
+                labels: ['Likes', 'Dislikes'],
                 datasets: [
                     {
-                        label: 'ESTADISTICA',
-                        data: [{{v.likes}}, {{v.dislikes}}],
-                        borderColor:['#B79A02','#4F2172'],
-                        backgroundColor:['#FFF0B9','#C6AADB'],
+                        label: '{{v.title}}',
+                        data: [{{v.likes.count}}, {{v.dislikes.count}}],
+                        borderColor:['#CD5C5C','#4F2172'],
+                        backgroundColor:['#FA8072','#C6AADB'],
                       },  
                 ]
               

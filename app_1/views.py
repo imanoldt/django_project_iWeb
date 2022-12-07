@@ -12,10 +12,14 @@ from django.contrib.auth import login as logout_process
 from django.contrib.auth import authenticate
 from app_1.models import Video
 from  .forms import NewVideoForm ##importado para upload
+from django.contrib.auth.models import User
+
 
 PUBLIC_DOMAIN_NAME = '127.0.0.1:8000'
 
 
+def hacercosas():
+    print('acabo de guardar un video y procedo a cambiar las carpetas')
 
 
 class error_404handle(TemplateView):
@@ -93,17 +97,22 @@ class base (DetailView):
 
 
 def upload(request):
-  
+    initial_data={
+        'channel':request.user.username,
+        
+    }
+
     data={
-        'form':NewVideoForm(),
+        'form':NewVideoForm(initial=initial_data),
         #'mensaje':"video no subido",
     }
     if request.method=='POST':
-        formulario=NewVideoForm(request.POST, request.FILES)##formulario con los datos 
+        formulario=NewVideoForm(request.POST, request.FILES,initial=initial_data)##formulario con los datos 
         if formulario.is_valid():
            
             formulario.save()
             ##data['mensaje']="Video publicado"
+            #hacercosas()
         else:
            data['form'] =formulario ##sobreescribo 
 

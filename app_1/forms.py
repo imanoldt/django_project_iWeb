@@ -1,8 +1,10 @@
 from django import forms
 from django.utils.safestring import mark_safe
 from django.contrib.auth.forms import UserCreationForm
-from .models import UploadVideo
+from .models import Video
 from django.forms import ModelForm
+
+
 
 #Formulario de registro con login 
 class LoginForm(forms.Form):
@@ -22,8 +24,10 @@ class CommentForm(forms.Form):
 class NewVideoForm(forms.ModelForm):
     ## especificcar que use el modelo UploadVideo ya creado
     class Meta:
-        model=UploadVideo
-        ##fields=['title','description','file']
-        fields='__all__'
-        
-    
+        model=Video
+        fields=['title','description','cathegory','file','thumnail1','channel']
+       ## fields='__all__'
+       
+   
+ ##user = NewVideoForm(initial={'tank': 123})   
+   
