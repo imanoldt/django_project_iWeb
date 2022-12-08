@@ -1,0 +1,14 @@
+
+.board {
+  text-align: center;
+  border-radius: 4px;
+  width: 500px;
+  background-color: #212529;
+}
+
+.board > * {
+  font-size: 75px;
+  font-family: 'Monoton', cursive;
+  color: #fff;
+  text-transform: uppercase;
+}

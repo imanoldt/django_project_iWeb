@@ -64,3 +64,33 @@ h3{
    height: 100%;
    
 }
+
+.card {
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+}
+.card-graph .card-graph_title {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.card-graph .graph {
+    height: 250px;
+}
+
+.card-graph .legend .label {
+    display: inline-flex;
+    align-items: center;
+    text-align: left;
+}
+.card-graph .legend .label .color {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #fb263b;
+}
+

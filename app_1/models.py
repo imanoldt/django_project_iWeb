@@ -31,8 +31,8 @@ class Video(models.Model):
 
     title = models.CharField(max_length=30, default='')
     description = models.TextField(max_length=300, null=True)
-    path = models.CharField(max_length=2000, null=True)
-    thumnail = models.CharField(max_length=2000, null=True)
+    path = models.CharField(max_length=2000, null=True, blank="True")
+    thumnail = models.CharField(max_length=2000, null=True, blank="True")
     length = models.IntegerField(null=True, default=0)
     datetime = models.DateTimeField(auto_now=True, blank=False, null=False)
     likes = models.ManyToManyField(

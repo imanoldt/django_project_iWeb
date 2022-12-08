@@ -10,15 +10,25 @@
   YouFlix
   {% endblock %} 
   {% block contentVideo %}
+  
+  <link rel="stylesheet" href="{% static 'css/html5reset-1.6.1.css'%}"  type="text/css" media="screen,print">
+	<link href="{% static 'css/demo.css'%}" rel="stylesheet" type="text/css">
+	<link href='https://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="{% static 'js/jquery.novacancy.js' %}"></script>
+  <script src="{% static 'js/effects.js' %}"></script>  
+	
+
   <div class="container">
-
-
-
      <nav class="navbar navbar-dark bg-dark p-2 mt-2">
-      <!-- Navbar content -->
-      <h1 class="dysplay-6 " id="title">YOUFLIX</h1>
+      <img class="" src="{% static 'img/Logo_negro_blanco.webp' %}" alt="YouFlix_Logo" height="120px">
+      <div class="board">
+        <p id="you">You</p>
+        <p id="flix">Flix</p>
+    </div>
       {% if user.is_authenticated %}
-      <p class="content-nav-izq text-light"> Bienvenido {% user_display user %}&nbsp; </p>
+      <p class="content-nav-izq text-light mx-auto"> Bienvenido {% user_display user %}&nbsp; </p>
       <img class="rounded-circle" src="{{ user.socialaccount_set.all.0.get_avatar_url }}" alt="userImg" />
       <a href="{% url 'logout' %}">
         <button type="button" class="btn btn-danger p-2 m-1">Cerrar Sesion</button>
