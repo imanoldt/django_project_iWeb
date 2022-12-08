@@ -45,6 +45,11 @@ class Video(models.Model):
                                 blank=True, null=True, default='', related_name='videos')
     file = models.FileField(upload_to="videos", blank=True,null=True)
     thumnail1=models.ImageField(upload_to="imagenes", blank=True,null=True)
+    
+    @property
+    def darlike(self):
+        return self.likes.all().count()
+    
     def __str__(self):
         return  self.title
     

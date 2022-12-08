@@ -86,6 +86,15 @@ class VideoListView (ListView):
 class ProfileListView (ListView):
     model = Video
     template_name = 'app_1/profile.html'
+    
+    def get_queryset(self):
+        #print("USER: ",Usuarios.objects.get(User.pk))
+        anonUser = User.objects.get(username="irene2")#crear instancia usuario y luego usar su id
+       # print("USUARIO ID: ",anonUser.id)
+        c=Channel.objects.filter(user=anonUser.id)
+        #print("NOMBRE CANAL: ",c)
+       # return Video.objects.filter(channel=5)
+        return Video.objects.all
 
 
 class base (DetailView):
@@ -126,6 +135,15 @@ def player(request, titulo):
         'video': video,
         'videos_r': videos_r,
     }
+    #para el btn likes y dislikes
+    if request.method=='POST':
+        if request.user in  video.likes.all():
+            video.likes.remove(request.user)#remove user (like)
+            video.dislikes.add(request.user)#add user (like)
+        else:
+            print("añadir likes")
+            video.dislikes.remove(request.user)#remove user (like)
+            video.likes.add(request.user)#add user (like)
     return render(request, 'app_1/player.html', context)
 
 
