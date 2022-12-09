@@ -1,5 +1,5 @@
-{% load static%}
-{% load crispy_forms_tags %}
+{%extends 'app_1/base.html' %} {% load static%} {% load crispy_forms_tags %} 
+{% block contentVideo %}
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -49,33 +49,30 @@
             <video class="embed-responsive embed-responsive-16by9" controls>
               <source src="{{ video.filename }}" type="video/mp4" />
             </video>
-            <form action='' method='POST'>
-              {% csrf_token %} <!--token de seguridad-->
+            <form action="" method="POST">
+              {% csrf_token %}
+              <!--token de seguridad-->
               {% if user not in video.likes.all %}
-                <button class="btn btn-success" type="submit">like</button>
+              <button type="submit" class="btn btn-lg btn-success">Like</button>
+              <button type="submit" class="btn btn-lg btn-danger" disabled>
+                Dislike
+              </button>
               {%else%}
-                <button class="btn btn-danger" type="submit">dislike</button>
+              <button type="submit" class="btn btn-lg btn-success" disabled>
+                Like
+              </button>
+              <button type="submit" class="btn btn-lg btn-danger">
+                Dislike
+              </button>
               {%endif%}
- 
             </form>
-           
+
             <span
               class="tit-video badge bg-danger rounded-pill w-100 text-start"
             >
               {{ video.title }}</span
             >
-             <!--
-            <span
-            class="tit-video badge bg-danger rounded-pill w-100 text-start"
-          >
-           {{ video.likes.count }}</span
-          >
-         
-          <span
-          class="tit-video badge bg-danger rounded-pill w-100 text-start"
-        >
-          {{ video.dislikes.count }}</span
-        >-->
+
             <div class="cont-descrip">
               <p class="descrip">{{ video.description }}</p>
             </div>
@@ -83,7 +80,7 @@
           <div class="col-md-5 col-lg-4 order-md-last">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
               <span class="badge bg-danger rounded-pill">TUS VIDEOS</span>
-              <span class="badge bg-danger rounded-pill">100</span>
+              <span class="badge bg-danger rounded-pill">3</span>
             </h4>
 
             <ul class="list-group mb-5">
@@ -93,7 +90,11 @@
                   class="list-group-item d-flex justify-content-between lh-sm bg-secondary"
                 >
                   <div>
-                    <img src="{{video.thumnail}}" class="rounded img-fluid cubo-img-top" alt="{{video.title}}">
+                    <img
+                      src="{{video.thumnail}}"
+                      class="rounded img-fluid cubo-img-top"
+                      alt="{{video.title}}"
+                    />
                     <span class="text-light">{{video.title}}</span>
                   </div>
                 </li>
@@ -110,3 +111,4 @@
     </div>
   </body>
 </html>
+{% endblock %}

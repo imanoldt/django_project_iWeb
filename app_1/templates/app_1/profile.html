@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{%extends 'app_1/base2.html' %}
+{%extends 'app_1/base.html' %}
 <!--COGER NOMBRE USUARIO DE INICIO DE SESION-->
 {% load account %}
 {% user_display user %}
@@ -38,7 +38,7 @@
                     <div class="col-sm 12 col-md-4 col-md-4 col-md-4  py-2">
                       <a href="/player/{{video.title}}" class="text-decoration-none">
                       <div class="cubo">
-                        <img src="{{video.thumnail}}" class="rounded cubo-img-top" alt="{{video.title}}"/>
+                        <img src="{{video.miniatura}}" class="rounded cubo-img-top" alt="{{video.title}}"/>
                         <div class="cubo-body p-3">
                           <h5 class="cubo-title p-3 text-left">{{video.title}}</h5>
                           <p class="cubo-text p-3 text-justify">{{video.description}}</p>

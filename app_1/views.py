@@ -10,8 +10,8 @@ from django.contrib import messages
 from django.contrib.auth import login as login_process
 from django.contrib.auth import login as logout_process
 from django.contrib.auth import authenticate
-from app_1.models import Video
-from  .forms import NewVideoForm ##importado para upload
+from app_1.models import Video, Channel
+from .forms import NewVideoForm  # importado para upload
 from django.contrib.auth.models import User
 
 
@@ -25,8 +25,10 @@ def hacercosas():
 class error_404handle(TemplateView):
     template_name = 'error/404NotFound.html'
 
+
 class error_500handle(TemplateView):
     template_name = 'error/500NotFound.html'
+
 
 class login(View):
 
@@ -89,12 +91,15 @@ class ProfileListView (ListView):
 
     def get_queryset(self):
         #print("USER: ",Usuarios.objects.get(User.pk))
-        anonUser = User.objects.get(username="irene2")#crear instancia usuario y luego usar su id
-       # print("USUARIO ID: ",anonUser.id)
-        #c=Channel.objects.filter(user=anonUser.id)
-        #print("NOMBRE CANAL: ",c)
-       # return Video.objects.filter(channel=5)
-        return Video.objects.all
+        #anonUser = User.objects.get(username="irene2")#crear instancia usuario y luego usar su id
+        print("USUARIO ID: ",self.request.user.username)
+
+        ca=Channel.objects.get(channel_name=self.request.user.username)
+       #c=Channel.objects.filter(user=anonUser.id)
+        print("NOMBRE CANAL COMO ASIER: ",ca)
+       # print("NOMBRE CANAL: ",c)
+        return Video.objects.filter(channel=ca)
+        #return Video.objects.all
 
 
 class base (DetailView):
@@ -106,27 +111,25 @@ class base (DetailView):
 
 
 def upload(request):
-    initial_data={
-        'channel':request.user.username,
-        
+    initial_data = {
+        'channel': request.user.username,
+
     }
 
-    data={
-        'form':NewVideoForm(initial=initial_data),
-        #'mensaje':"video no subido",
+    data = {
+        'form': NewVideoForm(initial=initial_data),
+        # 'mensaje':"video no subido",
     }
-    if request.method=='POST':
-        formulario=NewVideoForm(request.POST, request.FILES,initial=initial_data)##formulario con los datos 
+    if request.method == 'POST':
+        # formulario con los datos
+        formulario = NewVideoForm(
+            request.POST, request.FILES, initial=initial_data)
         if formulario.is_valid():
-           
             formulario.save()
-            ##data['mensaje']="Video publicado"
-            #hacercosas()
         else:
-           data['form'] =formulario ##sobreescribo 
+            data['form'] = formulario
+    return render(request, 'app_1/upload.html', data)
 
-    return render(request, 'app_1/upload.html',data)
-    
 
 def player(request, titulo):
     video = Video.objects.get(title=titulo)
@@ -135,15 +138,15 @@ def player(request, titulo):
         'video': video,
         'videos_r': videos_r,
     }
-    #para el btn likes y dislikes
-    if request.method=='POST':
-        if request.user in  video.likes.all():
-            video.likes.remove(request.user)#remove user (like)
-            video.dislikes.add(request.user)#add user (like)
+    # para el btn likes y dislikes
+    if request.method == 'POST':
+        if request.user in video.likes.all():
+            video.likes.remove(request.user)  # remove user (like)
+            video.dislikes.add(request.user)  # add user (like)
         else:
             print("añadir likes")
-            video.dislikes.remove(request.user)#remove user (like)
-            video.likes.add(request.user)#add user (like)
+            video.dislikes.remove(request.user)  # remove user (like)
+            video.likes.add(request.user)  # add user (like)
     return render(request, 'app_1/player.html', context)
 
 
