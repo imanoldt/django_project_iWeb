@@ -1,5 +1,8 @@
 .container {
   max-width: 980px;
+  
+
+  
 }
 
 .title {
@@ -65,7 +68,7 @@ video {
   border-radius: 10px;
 }
 
-.tit-video {
+#tit {
   font-size: 20px;
   margin-top: 2%;
 }
@@ -86,6 +89,7 @@ video {
   background-color: #dc3444;
   border-radius: 10px;
   padding: 2%;
+  font-size: 20px;
 }
 
 @media (min-width: 768px) {
