@@ -1,12 +1,16 @@
-{% load crispy_forms_tags %}
+{% load crispy_forms_tags %} 
+{% load account %}
 
+{% load static %}
 <!DOCTYPE html>
-{%load static%}
-<html lang="en">
+<html lang="es">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Imanol Duran Tejada" />
+    <meta name="author" content="Irene Gonzalez Gonzalez" />
+    <meta name="copyright" content="YouFlix Copyright" />
 
     <!-- Bootstrap CSS -->
     <link
@@ -23,23 +27,27 @@
       src="https://kit.fontawesome.com/ffec4ec2ed.js"
       crossorigin="anonymous"
     ></script>
-    <!-- Wrap inside the head tag JQUERY HEAD TAG -->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../../static/js/main.js"></script>
-    <link rel="stylesheet" href="../../static/css/animation.css" />
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/animation.css' %}" />
     {% comment %} STYLE {% endcomment %}
-    <link rel="stylesheet" href="../../static/css/style.css" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 
     <link
       rel="icon"
       type="image/x-icon"
-      href="../../static/img/logo_pixel.webp"
+      href="{% static 'img/logoico.ico' %}"
     />
     <title>YouFlix</title>
   </head>
   <body class="bg-dark">
     <div id="preloader">
-      <img src="../../static/img/Logo_negro_blanco.webp" id="tit-preloader" />
+      <img
+        src="{% static 'img/Logo_negro_blanco.webp' %}"
+        id="tit-preloader"
+        alt="logo"
+      />
       <div id="pulsar">
         <div class="pulsar__dot"></div>
       </div>
@@ -67,7 +75,7 @@
               <div class="carousel-item img-2 min-vh-100">
                 <div class="carousel-caption d-none d-md-block">
                   <h4 class="font-weight-bold">YouFlix</h4>
-                  <a class="text-muted text-decoration-none">Umboxings</a>
+                  <a class="text-muted text-decoration-none">Multimedia</a>
                 </div>
               </div>
             </div>
@@ -102,8 +110,9 @@
         >
           <div class="px-lg-5 pt-lg-4 pb-lg-3 p-4 mb-auto w-100">
             <img
-              src="../../static/img/Logo_negro_blanco.webp"
+              src="{% static 'img/Logo_negro_blanco.webp' %}"
               class="img-fluid rounded mx-auto d-block"
+              alt="logo"
             />
           </div>
           <div class="align-self-center w-100 px-lg-5 py-lg-4 p-4">

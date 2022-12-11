@@ -20,7 +20,7 @@ body {
   background-color: var(--dark-x);
 }
 
-#foto_left{
+#foto_left {
   z-index: -1;
 }
 .btn {

@@ -1,20 +1,18 @@
 {% extends 'app_1/base.html' %} {% load static %} {% block estilo %}
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="stylesheet" href="{% static 'css/stadistics.css' %}" />
+<link
+rel="icon"
+type="image/x-icon"
+href="{% static 'img/logoico.ico' %}"
+/>
+<title>Estadisticas</title>
 
 {% endblock %} {% block contentVideo %}
 <h1>ESTADISTICAS</h1>
 
 <div class="container">
-  {% for v in videos %} {% comment %}
-  <div class="gr">
-    <h3>{{v.title}}</h3>
-    <div class="context">
-      <canvas id="myChart{{v.id}}"></canvas>
-    </div>
-  </div>
-  {% endcomment %}
-
+  {% for v in videos %} 
   <div class="col-sm-1 col-md-6 col-lg-4">
     <div class="card card-graph p-2 m-2">
       <span
@@ -23,7 +21,6 @@
         {{v.title}}</span
       >
       <canvas id="myChart{{v.id}}"></canvas>
-      
       <div class="legend">
 
 

@@ -1,10 +1,14 @@
+{% load static %}
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="es">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta name="author" content="Imanol Duran Tejada" />
+    <meta name="author" content="Irene Gonzalez Gonzalez" />
+    <meta name="copyright" content="YouFlix Copyright" />
 
     <!-- Bootstrap CSS -->
     <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
@@ -14,16 +18,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../../static/js/main.js"></script>
-    <link rel="stylesheet" href="../../static/css/animation.css" />
+    <script type="text/javascript" src="{% static 'js/main.js'%}"></script>
+    <link rel="stylesheet" href="{% static 'css/animation.css'%}" />
 
-    <link href="../../static/css/style.css" rel="stylesheet"/>
-<link rel="icon" type="image/x-icon" href="../../static/img/Logo_negro_negro.webp">
+    <link href="{% static 'css/style.css'%}" rel="stylesheet"/>
+<link rel="icon" type="image/x-icon" href="{% static 'img/Logo_negro_negro.webp'%}">
     <title>YouFlix</title>
 </head>
 <body class="bg-dark">
     <div id="preloader">
-        <img src="../../static/img/Logo_negro_blanco.webp" id="tit-preloader">
+        <img src="{% static 'img/Logo_negro_blanco.webp'%}" id="tit-preloader">
         <div id="pulsar">
             <div class="pulsar__dot">
             </div>
@@ -58,7 +62,7 @@
         </div>
         <div class="col-lg-5 bg-dark d-flex flex-column align-items-end min-vh-100">
             <div class="px-lg-5 pt-lg-4 pb-lg-3 p-4 mb-auto w-100">
-                <img class="img-fluid rounded mx-auto d-block" src="../../static/img/Logo_negro_blanco.webp"/>
+                <img class="img-fluid rounded mx-auto d-block" src="{% static 'img/Logo_negro_blanco.webp'%}"/>
             </div>
             <div class="align-self-center w-100 px-lg-5 py-lg-4 p-4">
                 <h1 class="font-weight-bold mb-4">Registrate</h1>
@@ -70,7 +74,7 @@
                 </form>
                 <p class="font-weight-bold text-center text-muted">O Inicia Sesión Con</p>
                 <div class="d-flex justify-content-around">
-                    <a href="">
+                    <a href="/accounts/google/login/">
                         <button class="btn btn-outline-light flex-grow-1 mr-2" id="btn" type="button"><i
                                 class="fab fa-google lead mr-2"></i> Google
                         </button>

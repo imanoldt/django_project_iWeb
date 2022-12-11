@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 {%extends 'app_1/base.html' %}
-<!--COGER NOMBRE USUARIO DE INICIO DE SESION-->
+
 {% load account %}
 {% user_display user %}
 {% load static %}
+
+<html lang="es">
+  <meta name="author" content="Imanol Duran Tejada" />
+  <meta name="author" content="Irene Gonzalez Gonzalez" />
+  <meta name="copyright" content="YouFlix Copyright" />
+
+<!--COGER NOMBRE USUARIO DE INICIO DE SESION-->
 
 {% block estilo %}
   <link rel="stylesheet" href="{% static 'css/profile.css'%}"> 
@@ -35,14 +42,14 @@
                   <div class="row mt-4" >
                     {% if object_list %} {% comment %} COMPROBACION DE SI NOS DEVUELVE UNA LISTA {% endcomment %}
                     {% for video in object_list %}  {% comment %} RECORREMOS {% endcomment %}
-                    <div class="col-sm 12 col-md-4 col-md-4 col-md-4  py-2">
+                    <div class="col-sm-2 col-md-3 py-2">
                       <a href="/player/{{video.title}}" class="text-decoration-none">
                       <div class="cubo">
                         <img src="{{video.miniatura}}" class="rounded cubo-img-top" alt="{{video.title}}"/>
-                        <div class="cubo-body p-3">
-                          <h5 class="cubo-title p-3 text-left">{{video.title}}</h5>
-                          <p class="cubo-text p-3 text-justify">{{video.description}}</p>
-                          <p class="cubo-text p-3"><small class="text">{{video.datetime}}</small></p>
+                        <div class="cubo-body p-2">
+                          <h5 class="cubo-title p-2 text-left">{{video.title}}</h5>
+                          <p class="cubo-text p-2 text-justify">{{video.description}}</p>
+                          <p class="cubo-text p-2"><small class="text">{{video.datetime}}</small></p>
                         </div>
                       </a>
                       </div>

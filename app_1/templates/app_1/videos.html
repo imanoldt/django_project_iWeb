@@ -10,10 +10,18 @@
   YouFlix
   {% endblock %} 
   {% block contentVideo %}
+  <meta name="author" content="Imanol Duran Tejada" />
+  <meta name="author" content="Irene Gonzalez Gonzalez" />
+  <meta name="copyright" content="YouFlix Copyright" />
   
   <link rel="stylesheet" href="{% static 'css/html5reset-1.6.1.css'%}"  type="text/css" media="screen,print">
 	<link href="{% static 'css/demo.css'%}" rel="stylesheet" type="text/css">
 	<link href='https://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'>
+  <link
+  rel="icon"
+  type="image/x-icon"
+  href="{% static 'img/logoico.ico' %}"
+/>
 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script type="text/javascript" src="{% static 'js/jquery.novacancy.js' %}"></script>
@@ -28,7 +36,7 @@
         <p id="flix">Flix</p>
     </div>
       {% if user.is_authenticated %}
-      <p class="content-nav-izq text-light mx-auto"> Bienvenido {% user_display user %}&nbsp; </p>
+      <p class="content-nav-izq text-light mx-auto"> Bienvenid@ {% user_display user %}&nbsp; </p>
       <img class="rounded-circle" src="{{ user.socialaccount_set.all.0.get_avatar_url }}" alt="userImg" />
       <a href="{% url 'logout' %}">
         <button type="button" class="btn btn-danger p-2 m-1">Cerrar Sesion</button>
