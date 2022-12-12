@@ -26,8 +26,8 @@ class NewVideoForm(forms.ModelForm):
     class Meta:
         model=Video
         fields=['title','description','cathegory','file','thumnail1','channel']
-       ## fields='__all__'
+       
        
    
- ##user = NewVideoForm(initial={'tank': 123})   
+   
    

@@ -21,10 +21,3 @@ class UserAdmin(admin.ModelAdmin):
     list_display = ('id', 'title')
 
 
-#@admin.register(UploadVideo)  
-#class UserAdmin(admin.ModelAdmin):
-#    list_display = ('id', 'title', 'cathegory')
-#    list_editable = ('title', 'cathegory',)
-#    list_filter = ('cathegory',)
-#    ordering = ('id', 'title')
-#    search_fields = ('id', 'title')

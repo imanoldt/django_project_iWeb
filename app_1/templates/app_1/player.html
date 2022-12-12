@@ -1,4 +1,9 @@
-{%extends 'app_1/base.html' %} {% load static%} {% load crispy_forms_tags %}
+{%extends 'app_1/base.html' %}
+{% load static%} 
+{% load account %}
+{% user_display user %}
+{% load crispy_forms_tags %}
+
 <html lang="es">
   {% block estilo %}
   <meta name="author" content="Imanol Duran Tejada" />
@@ -46,27 +51,31 @@
             <video class="embed-responsive embed-responsive-16by9" controls>
               <source src="{{ video.filename }}" type="video/mp4" />
             </video>
-            <form action="" method="POST">
-              {% csrf_token %}
-              <!--token de seguridad-->
-              {% if user not in video.likes.all %}
-              <button type="submit" class="btn btn-lg btn-success">Like</button>
-              <button type="submit" class="btn btn-lg btn-danger" disabled>
-                Dislike
-              </button>
-              {%else%}
-              <button type="submit" class="btn btn-lg btn-success" disabled>
-                Like
-              </button>
-              <button type="submit" class="btn btn-lg btn-danger">
-                Dislike
-              </button>
-              {%endif%}
-            </form>
-
+              <form action="" method="POST">
+                {% csrf_token %}
+                <!--token de seguridad-->
+                {% if user not in video.likes.all %}
+                <button type="submit" class="btn btn-lg btn-success">Like</button>
+                <button type="submit" class="btn btn-lg btn-danger" disabled>
+                   Dislike
+                </button>
+                {%else%}
+                <button type="submit" class="btn btn-lg btn-success" disabled>
+                   Like
+                </button>
+                <button type="submit" class="btn btn-lg btn-danger">
+                  Dislike
+                </button>
+                {%endif%}
+              </form>
+            <div class="container" ref="stylesheet">
+              <p  class="name">{% user_display user %}</p>
+              <img class="rounded-circle" src="{{ user.socialaccount_set.all.0.get_avatar_url }}" alt="userImg" />
+             
+            </div>
             <span
               id="tit"
-              class="tit-video badge bg-danger rounded-pill w-100 text-start"
+              class="tit-video badge bg-danger rounded-pill w-100 text-left"
             >
               {{ video.title }}</span
             >

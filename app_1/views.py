@@ -85,21 +85,16 @@ class VideoListView (ListView):
     template_name = 'app_1/videos.html'
 
 
+
 class ProfileListView (ListView):
     model = Video
     template_name = 'app_1/profile.html'
 
     def get_queryset(self):
-        #print("USER: ",Usuarios.objects.get(User.pk))
-        #anonUser = User.objects.get(username="irene2")#crear instancia usuario y luego usar su id
         print("USUARIO ID: ",self.request.user.username)
-
         ca=Channel.objects.get(channel_name=self.request.user.username)
-       #c=Channel.objects.filter(user=anonUser.id)
-        print("NOMBRE CANAL COMO ASIER: ",ca)
-       # print("NOMBRE CANAL: ",c)
         return Video.objects.filter(channel=ca)
-        #return Video.objects.all
+
 
 
 class base (DetailView):
