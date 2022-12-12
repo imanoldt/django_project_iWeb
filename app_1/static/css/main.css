@@ -6,14 +6,14 @@
   color: white;
 }
 
-.container{
+.container {
   overflow: hidden;
 }
-.rounded-circle{
+.rounded-circle {
   float: right;
   width: 50px;
 }
-.name{
+.name {
   margin-left: 25px;
   float: right;
   font-size: 20px;
